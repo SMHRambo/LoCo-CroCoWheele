@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=Cygwin-Windows
-CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=segway
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/segway
-CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=segway.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/segway.tar
+CND_PLATFORM_Debug=GNU-Linux-x86
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
+CND_ARTIFACT_NAME_Debug=loco-crocowheele
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/loco-crocowheele
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
+CND_PACKAGE_NAME_Debug=loco-crocowheele.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/loco-crocowheele.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=segway
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/segway
+CND_ARTIFACT_NAME_Release=loco-crocowheele
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/loco-crocowheele
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=segway.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/segway.tar
+CND_PACKAGE_NAME_Release=loco-crocowheele.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/loco-crocowheele.tar
 #
 # include compiler specific variables
 #

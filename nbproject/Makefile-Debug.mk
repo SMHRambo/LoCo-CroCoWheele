@@ -14,14 +14,14 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc.exe
-CCC=g++.exe
-CXX=g++.exe
+CC=gcc
+CCC=g++
+CXX=g++
 FC=gfortran
-AS=as.exe
+AS=as
 
 # Macros
-CND_PLATFORM=Cygwin-Windows
+CND_PLATFORM=GNU-Linux-x86
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -62,48 +62,48 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/segway.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/segway.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/segway ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/src/CMotor.o: src/CMotor.cpp 
+${OBJECTDIR}/src/CMotor.o: nbproject/Makefile-${CND_CONF}.mk src/CMotor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CMotor.o src/CMotor.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/src/CBMA180.o: src/CBMA180.cpp 
+${OBJECTDIR}/src/CBMA180.o: nbproject/Makefile-${CND_CONF}.mk src/CBMA180.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
 
-${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
+${OBJECTDIR}/src/CVector.o: nbproject/Makefile-${CND_CONF}.mk src/CVector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
 
-${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
+${OBJECTDIR}/src/CLSM303DLH.o: nbproject/Makefile-${CND_CONF}.mk src/CLSM303DLH.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
 
-${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
+${OBJECTDIR}/src/CITG3200.o: nbproject/Makefile-${CND_CONF}.mk src/CITG3200.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
 
-${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp 
+${OBJECTDIR}/src/CI2C.o: nbproject/Makefile-${CND_CONF}.mk src/CI2C.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
 
-${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp 
+${OBJECTDIR}/src/CPWM.o: nbproject/Makefile-${CND_CONF}.mk src/CPWM.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWM.o src/CPWM.cpp
@@ -114,7 +114,7 @@ ${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/segway.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele
 
 # Subprojects
 .clean-subprojects:
