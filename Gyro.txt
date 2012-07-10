@@ -1,0 +1,5 @@
+Address = 0b11010000 or 0b11010010 (Pin9)
+
+GyroX 0x1D und 0x1E
+GyroY 0x1F und 0x20
+GyroZ 0x21 und 0x22
