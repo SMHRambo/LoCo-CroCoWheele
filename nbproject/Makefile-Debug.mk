@@ -34,7 +34,14 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/src/CMotor.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/src/CBMA180.o \
+	${OBJECTDIR}/src/CVector.o \
+	${OBJECTDIR}/src/CLSM303DLH.o \
+	${OBJECTDIR}/src/CITG3200.o \
+	${OBJECTDIR}/src/CI2C.o \
+	${OBJECTDIR}/src/CPWM.o
 
 
 # C Compiler Flags
@@ -51,7 +58,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/usr/local/lib -lboost_exception -lboost_iostreams -lboost_locale -lboost_regex -lboost_signals -lboost_system -lboost_thread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -61,10 +68,45 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/src/CMotor.o: src/CMotor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CMotor.o src/CMotor.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -D/usr/local/ -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/src/CBMA180.o: src/CBMA180.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
+
+${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
+
+${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
+
+${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
+
+${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
+
+${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWM.o src/CPWM.cpp
 
 # Subprojects
 .build-subprojects:
