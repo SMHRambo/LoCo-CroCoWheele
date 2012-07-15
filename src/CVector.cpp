@@ -10,7 +10,32 @@ CVector::~CVector()
 
 }
 
+void CVector::setX(int16_t iX)
+{
+    m_VectorMutex.lock();
+    
+    m_iX = iX;
+    
+    m_VectorMutex.unlock();    
+}
 
+void CVector::setY(int16_t iY)
+{
+    m_VectorMutex.lock();
+    
+    m_iY = iY;
+    
+    m_VectorMutex.unlock();   
+}
+
+void CVector::setZ(int16_t iZ)
+{
+    m_VectorMutex.lock();
+    
+    m_iZ = iZ;
+    
+    m_VectorMutex.unlock();    
+}
 
 int16_t CVector::getX()
 {

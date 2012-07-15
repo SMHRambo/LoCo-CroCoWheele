@@ -1,15 +1,16 @@
 #include "../include/CITG3200.h"
 
-CITG3200::CITG3200()
+CITG3200::CITG3200(CI2C * pI2C, uint8_t iAddress)
 {
-
+    m_pI2C = pI2C;
+    m_iAddress = iAddress;
+    m_bStop = false;
 }
 
 CITG3200::~CITG3200()
 {
 
 }
-
 
 uint16_t CITG3200::getGyroXRaw()
 {
@@ -192,15 +193,32 @@ CVector CITG3200::getGyroVectorPerI2C()
 
 void CITG3200::start()
 {
-
+    m_ITG3200Thread = boost::thread(&CITG3200::run, this);
 }
 
 void CITG3200::stop()
 {
+    m_Stop = true;
+    m_ITG3200Thread.join();
+}
 
+void CITG3200::kill()
+{
+    m_ITG3200Thread.interrupt();
+    m_ITG3200Thread.join();
 }
 
 void CITG3200::run()
 {
-
+    try
+    {
+        while(!m_bStop)
+        {
+            
+        }
+    }
+    catch(boost::thread_interrupted&)
+    {
+        
+    }
 }

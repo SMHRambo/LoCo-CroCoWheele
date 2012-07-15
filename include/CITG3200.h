@@ -10,7 +10,7 @@
 class CITG3200
 {
     public:
-        CITG3200();
+        CITG3200(CI2C * pI2C, uint8_t iAddress);
         virtual ~CITG3200();
 
         uint16_t getGyroXRaw();
@@ -43,15 +43,19 @@ class CITG3200
 
         void start();
         void stop();
+        void kill();
         void run();
 
     protected:
     private:
-        boost::mutex m_ITG3200Mutex;
-        CI2C * m_pI2C;
-        uint16_t m_iGyroX;
-        uint16_t m_iGyroY;
-        uint16_t m_iGyroZ;
+        boost::recursive_mutex  m_ITG3200Mutex;
+        boost::thread           m_ITG3200Thread;
+        bool                    m_bStop;
+        CI2C *                  m_pI2C;
+        uint8_t                 m_iAddress;
+        uint16_t                m_iGyroX;
+        uint16_t                m_iGyroY;
+        uint16_t                m_iGyroZ;
 };
 
 #endif // ITG3200_H

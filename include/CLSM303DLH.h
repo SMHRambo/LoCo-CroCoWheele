@@ -10,7 +10,7 @@
 class CLSM303DLH
 {
     public:
-        CLSM303DLH(CI2C pI2C);
+        CLSM303DLH(CI2C * pI2C, uint8_t iAddress);
         virtual ~CLSM303DLH();
 
         uint16_t getAccXRaw();
@@ -71,18 +71,22 @@ class CLSM303DLH
 
         void start();
         void stop();
+        void kill();
         void run();
 
     protected:
     private:
-        boost::mutex m_LSM303DLHMutex;
-        CI2C * m_pI2C;
-        uint16_t m_iAccX;
-        uint16_t m_iAccY;
-        uint16_t m_iAccZ;
-        uint16_t m_iMagX;
-        uint16_t m_iMagY;
-        uint16_t m_iMagZ;
+        boost::recursive_mutex  m_LSM303DLHMutex;
+        boost::thread           m_LSM303DLHThread;
+        bool                    m_bStop;
+        CI2C *                  m_pI2C;
+        uint8_t                 m_iAddress;
+        uint16_t                m_iAccX;
+        uint16_t                m_iAccY;
+        uint16_t                m_iAccZ;
+        uint16_t                m_iMagX;
+        uint16_t                m_iMagY;
+        uint16_t                m_iMagZ;
 };
 
 #endif // LSM303DLH_H

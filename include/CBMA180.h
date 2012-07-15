@@ -10,7 +10,7 @@
 class CBMA180
 {
     public:
-        CBMA180(CI2C pI2C);
+        CBMA180(CI2C * pI2C, uint8_t iAddress);
         virtual ~CBMA180();
 
         uint16_t getAccXRaw();
@@ -43,15 +43,19 @@ class CBMA180
 
         void start();
         void stop();
+        void kill();
         void run();
 
     protected:
     private:
-        boost::mutex m_BMA180Mutex;
-        CI2C * m_pI2C;
-        uint16_t m_iAccX;
-        uint16_t m_iAccY;
-        uint16_t m_iAccZ;
+        boost::recursive_mutex  m_BMA180Mutex;
+        boost::thread           m_BMA180Thread;
+        bool                    m_bStop;
+        CI2C *                  m_pI2C;
+        uint8_t                 m_iAddress;
+        uint16_t                m_iAccX;
+        uint16_t                m_iAccY;
+        uint16_t                m_iAccZ;
 };
 
 #endif // BMA180_H

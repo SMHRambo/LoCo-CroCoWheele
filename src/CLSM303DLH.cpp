@@ -1,8 +1,10 @@
 #include "../include/CLSM303DLH.h"
 
-CLSM303DLH::CLSM303DLH(CI2C pI2C)
+CLSM303DLH::CLSM303DLH(CI2C * pI2C, uint8_t iAddress)
 {
-
+    m_pI2C = pI2C;
+    m_iAddress = iAddress;
+    m_bStop = false;
 }
 
 CLSM303DLH::~CLSM303DLH()
@@ -356,15 +358,32 @@ CVector CLSM303DLH::getMagVectorPerI2C()
 
 void CLSM303DLH::start()
 {
-
+    m_LSM303DLHThread = boost::thread(&CLSM303DLH::run, this);
 }
 
 void CLSM303DLH::stop()
 {
+    m_Stop = true;
+    m_LSM303DLHThread.join();
+}
 
+void CLSM303DLH::kill()
+{
+    m_LSM303DLHThread.interrupt();
+    m_LSM303DLHThread.join();
 }
 
 void CLSM303DLH::run()
 {
-
+    try
+    {
+        while(!m_bStop)
+        {
+            
+        }
+    }
+    catch(boost::thread_interrupted&)
+    {
+        
+    }
 }

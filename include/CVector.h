@@ -10,6 +10,10 @@ class CVector
         CVector();
         virtual ~CVector();
 
+        void setX(int16_t iX);
+        void setY(int16_t iY);
+        void setZ(int16_t iZ);
+        
         int16_t getX();
         int16_t getY();
         int16_t getZ();
