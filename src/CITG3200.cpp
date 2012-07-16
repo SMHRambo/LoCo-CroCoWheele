@@ -198,7 +198,7 @@ void CITG3200::start()
 
 void CITG3200::stop()
 {
-    m_Stop = true;
+    m_bStop = true;
     m_ITG3200Thread.join();
 }
 

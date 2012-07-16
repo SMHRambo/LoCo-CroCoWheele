@@ -10,7 +10,7 @@ CI2C::CI2C(std::string sDevice)
 
         if (m_i2cSocket < 0)
         {
-            std::cout << "Could not open " << sDevice << std::endl;
+            std::cout << "Could not open " << sDevice << strerror(errno) << std::endl;
             throw 0;
         }
         
@@ -18,7 +18,9 @@ CI2C::CI2C(std::string sDevice)
     }
     catch(...)
     {
-        
+        unlock();
+        std::cout << "CI2C constructor failed." << std::endl;  
+        throw 0;
     }
 }
 
@@ -34,7 +36,9 @@ CI2C::~CI2C()
     }
     catch(...)
     {
-        
+        unlock();
+        std::cout << "CI2C destructor failed." << std::endl;  
+        throw 0;    
     }
 }
 
@@ -57,7 +61,7 @@ bool CI2C::readI2C(uint8_t iAddress, std::vector<uint8_t> & viData, uint8_t iLen
             unlock();
             return 0;
         }
-
+        
         iError = read(m_i2cSocket,viData.data(),iLength);
 
         if(iError != iLength)
@@ -69,13 +73,13 @@ bool CI2C::readI2C(uint8_t iAddress, std::vector<uint8_t> & viData, uint8_t iLen
         }
 
         unlock();
-        
         return 1;       
     }
     catch(...)
     {
         unlock();
-        throw 0;
+        std::cout << "CI2C readI2C failed." << std::endl;  
+        throw 0; 
     }
 
 }
@@ -84,6 +88,8 @@ bool CI2C::writeI2C(uint8_t iAddress, std::vector<uint8_t> viData)
 {
     try
     {
+        lock();
+        
         int iError = 0;
 
         iError = ioctl(m_i2cSocket,I2C_SLAVE,iAddress);
@@ -103,12 +109,14 @@ bool CI2C::writeI2C(uint8_t iAddress, std::vector<uint8_t> viData)
             unlock();
             return 0;
         }
-
+        
+        unlock();
         return 1;        
     }
     catch(...)
     {
         unlock();
+        std::cout << "CI2C writeI2C failed." << std::endl;  
         throw 0;
     }
 }

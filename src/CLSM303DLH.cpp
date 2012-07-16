@@ -363,7 +363,7 @@ void CLSM303DLH::start()
 
 void CLSM303DLH::stop()
 {
-    m_Stop = true;
+    m_bStop = true;
     m_LSM303DLHThread.join();
 }
 
