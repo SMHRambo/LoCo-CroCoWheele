@@ -29,6 +29,7 @@ class CI2C
         virtual ~CI2C();
 
         bool readI2C(uint8_t iAddress, std::vector<uint8_t> & viData, uint8_t iLength);
+        bool readI2C(uint8_t iAddress, uint8_t * pData, uint8_t iLength);
         bool writeI2C(uint8_t iAddress, std::vector<uint8_t> viData);
         
         void lock();

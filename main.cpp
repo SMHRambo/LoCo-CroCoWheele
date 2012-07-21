@@ -20,16 +20,14 @@ int main(int argc, char** argv)
 {
     try
     {
-        CI2C * pI2C = new CI2C("/dev/i2c-1");
+        CI2C * pI2C = new CI2C("/dev/i2c-3");
         
-        CBMA180 * pBMA180 = new CBMA180(pI2C, 0b1000000);
+        CBMA180 * pBMA180 = new CBMA180(pI2C, 0x41);
         
         while(true)
         {
-            std::cout << "Start reading i2c" << std::endl;
-            std::cout << pBMA180->getAccXPerI2C() << std::endl;
-            std::cout << "Finished reading i2c" << std::endl;
-            sleep(1000);
+            //std::cout << pBMA180->getAccXRawPerI2C() << std::endl;
+            pBMA180->run();
         }
 
         return 0;    

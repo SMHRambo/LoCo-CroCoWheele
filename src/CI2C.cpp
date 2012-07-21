@@ -50,14 +50,16 @@ bool CI2C::readI2C(uint8_t iAddress, std::vector<uint8_t> & viData, uint8_t iLen
         
         viData.clear();
         viData.resize(iLength, 0);
-
+        
         int iError = 0;
-
+        
+        
         iError = ioctl(m_i2cSocket,I2C_SLAVE,iAddress);
-
+        
         if (iError < 0)
         {
-            std::cout << "Failed to acquire bus access and/or talk to slave."  << std::endl;
+            std::cout << "Failed to acquire bus access and/or talk to slave." << std::endl;
+            std::cout << "Info: " << strerror(errno) << std::endl;
             unlock();
             return 0;
         }
@@ -66,8 +68,9 @@ bool CI2C::readI2C(uint8_t iAddress, std::vector<uint8_t> & viData, uint8_t iLen
 
         if(iError != iLength)
         {
-            viData.resize(iError);
-            std::cout << ""  << std::endl;
+            viData.resize(0);
+            std::cout << "Could not read from bus." << std::endl;
+            std::cout << "Info: " << strerror(errno) << std::endl;
             unlock();
             return 0;
         }
@@ -97,6 +100,7 @@ bool CI2C::writeI2C(uint8_t iAddress, std::vector<uint8_t> viData)
         if (iError < 0)
         {
             std::cout << "Failed to acquire bus access and/or talk to slave."  << std::endl;
+            std::cout << "Info: " << strerror(errno) << std::endl;
             unlock();
             return 0;    
         }
@@ -105,7 +109,8 @@ bool CI2C::writeI2C(uint8_t iAddress, std::vector<uint8_t> viData)
 
         if (iError != viData.size())
         {
-            std::cout << ""  << std::endl;
+            std::cout << "Could not write to bus." << std::endl;
+            std::cout << "Info: " << strerror(errno) << std::endl;
             unlock();
             return 0;
         }

@@ -185,8 +185,10 @@ uint16_t CBMA180::getAccXRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        m_iAccX = static_cast<unsigned short> ((viData.at(1) << 8) + viData.at(0));
+        piX[0] = viData.at(0);
+        piX[1] = viData.at(1);
     }
+    
     m_pI2C->unlock();
 
     return iX;
@@ -381,18 +383,19 @@ void CBMA180::run()
 {
     try
     {
+        std::vector<uint8_t> viDataIN;
+        std::vector<uint8_t> viDataOUT;
+        viDataOUT.push_back(0x02);
+        
         while (!m_bStop)
         {
-            std::vector<uint8_t> viData;
-            viData.push_back(0x02);
-
             m_pI2C->lock();
-            m_pI2C->writeI2C(m_iAddress, viData);
-            if (m_pI2C->readI2C(m_iAddress, viData, 6))
+            m_pI2C->writeI2C(m_iAddress, viDataOUT);
+            if (m_pI2C->readI2C(m_iAddress, viDataIN, 6))
             {
-                m_iAccX = static_cast<unsigned short> ((viData.at(5) << 8) + viData.at(4));
-                m_iAccY = static_cast<unsigned short> ((viData.at(3) << 8) + viData.at(2));
-                m_iAccZ = static_cast<unsigned short> ((viData.at(1) << 8) + viData.at(0));
+                m_iAccX = *((int16_t *)&viDataIN.at(4));
+                m_iAccY = *((int16_t *)&viDataIN.at(2));
+                m_iAccZ = *((int16_t *)&viDataIN.at(0));
             }
             m_pI2C->unlock();
         }
