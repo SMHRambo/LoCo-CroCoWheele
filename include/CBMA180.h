@@ -56,6 +56,8 @@ class CBMA180
         uint16_t                m_iAccX;
         uint16_t                m_iAccY;
         uint16_t                m_iAccZ;
+        uint8_t                 m_iBits;
+        uint8_t                 m_iRange;
 };
 
 #endif // BMA180_H
