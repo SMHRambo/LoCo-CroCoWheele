@@ -255,7 +255,7 @@ double CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iX = *((uint16 *)viData.data());
+        iX = *((uint16_t *)viData.data());
     }
     m_pI2C->unlock();
 
@@ -273,7 +273,7 @@ double CBMA180::getAccYPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iY = *((uint16 *)viData.data());
+        iY = *((uint16_t *)viData.data());
     }
     m_pI2C->unlock();
 

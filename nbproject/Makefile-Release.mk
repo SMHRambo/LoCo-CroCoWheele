@@ -40,6 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/CVector.o \
 	${OBJECTDIR}/src/CLSM303DLH.o \
 	${OBJECTDIR}/src/CITG3200.o \
+	${OBJECTDIR}/src/RPMeter.o \
+	${OBJECTDIR}/src/PWMDriver.o \
 	${OBJECTDIR}/src/CI2C.o \
 	${OBJECTDIR}/src/CPWM.o
 
@@ -97,6 +99,16 @@ ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
+
+${OBJECTDIR}/src/RPMeter.o: src/RPMeter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/RPMeter.o src/RPMeter.cpp
+
+${OBJECTDIR}/src/PWMDriver.o: src/PWMDriver.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/PWMDriver.o src/PWMDriver.cpp
 
 ${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

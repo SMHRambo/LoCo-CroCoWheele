@@ -256,6 +256,7 @@ build/Debug/GNU-Linux-x86/src/CBMA180.o: src/CBMA180.cpp \
  /usr/local/include/boost/ratio/detail/mpl/sign.hpp \
  /usr/local/include/boost/ratio/detail/mpl/gcd.hpp \
  /usr/local/include/boost/mpl/aux_/largest_int.hpp \
+ /usr/local/include/boost/mpl/aux_/config/dependent_nttp.hpp \
  /usr/local/include/boost/ratio/detail/mpl/lcm.hpp \
  /usr/local/include/boost/integer_traits.hpp \
  /usr/local/include/boost/ratio/ratio_fwd.hpp \
@@ -270,14 +271,14 @@ build/Debug/GNU-Linux-x86/src/CBMA180.o: src/CBMA180.cpp \
  /usr/local/include/boost/type_traits/is_unsigned.hpp \
  /usr/local/include/boost/type_traits/is_enum.hpp \
  /usr/local/include/boost/chrono/detail/is_evenly_divisible_by.hpp \
- /usr/local/include/boost/chrono/detail/system.hpp \
- /usr/local/include/boost/version.hpp \
  /usr/local/include/boost/thread/xtime.hpp \
  /usr/local/include/boost/date_time/posix_time/conversion.hpp \
  /usr/local/include/boost/date_time/gregorian/conversion.hpp \
  /usr/local/include/boost/thread/pthread/timespec.hpp \
  /usr/local/include/boost/thread/pthread/pthread_mutex_scoped_lock.hpp \
  /usr/local/include/boost/chrono/system_clocks.hpp \
+ /usr/local/include/boost/chrono/detail/system.hpp \
+ /usr/local/include/boost/version.hpp \
  /usr/local/include/boost/chrono/clock_string.hpp \
  /usr/local/include/boost/chrono/ceil.hpp \
  /usr/local/include/boost/optional.hpp \
@@ -405,6 +406,10 @@ build/Debug/GNU-Linux-x86/src/CBMA180.o: src/CBMA180.cpp \
  /usr/local/include/boost/detail/no_exceptions_support.hpp \
  /usr/local/include/boost/scoped_array.hpp \
  /usr/local/include/boost/smart_ptr/scoped_array.hpp \
+ /usr/local/include/boost/utility/result_of.hpp \
+ /usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
+ /usr/local/include/boost/preprocessor/facilities/intercept.hpp \
+ /usr/local/include/boost/utility/detail/result_of_iterate.hpp \
  src/../include/CVector.h src/../include/CI2C.h
 
 src/../include/CBMA180.h:
@@ -925,6 +930,8 @@ src/../include/CBMA180.h:
 
 /usr/local/include/boost/mpl/aux_/largest_int.hpp:
 
+/usr/local/include/boost/mpl/aux_/config/dependent_nttp.hpp:
+
 /usr/local/include/boost/ratio/detail/mpl/lcm.hpp:
 
 /usr/local/include/boost/integer_traits.hpp:
@@ -953,10 +960,6 @@ src/../include/CBMA180.h:
 
 /usr/local/include/boost/chrono/detail/is_evenly_divisible_by.hpp:
 
-/usr/local/include/boost/chrono/detail/system.hpp:
-
-/usr/local/include/boost/version.hpp:
-
 /usr/local/include/boost/thread/xtime.hpp:
 
 /usr/local/include/boost/date_time/posix_time/conversion.hpp:
@@ -968,6 +971,10 @@ src/../include/CBMA180.h:
 /usr/local/include/boost/thread/pthread/pthread_mutex_scoped_lock.hpp:
 
 /usr/local/include/boost/chrono/system_clocks.hpp:
+
+/usr/local/include/boost/chrono/detail/system.hpp:
+
+/usr/local/include/boost/version.hpp:
 
 /usr/local/include/boost/chrono/clock_string.hpp:
 
@@ -1226,6 +1233,14 @@ src/../include/CBMA180.h:
 /usr/local/include/boost/scoped_array.hpp:
 
 /usr/local/include/boost/smart_ptr/scoped_array.hpp:
+
+/usr/local/include/boost/utility/result_of.hpp:
+
+/usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp:
+
+/usr/local/include/boost/preprocessor/facilities/intercept.hpp:
+
+/usr/local/include/boost/utility/detail/result_of_iterate.hpp:
 
 src/../include/CVector.h:
 
