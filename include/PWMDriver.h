@@ -8,8 +8,8 @@
 class PWMDriver
 {
     public:
-        WMDriver(CI2C * pI2C, uint8_t iAddress);
-        virtual ~WMDriver();
+        PWMDriver(CI2C * pI2C, uint8_t iAddress);
+        virtual ~PWMDriver();
         
         void setPWM(uint8_t iChannle, uint16_t iDutyCycle);
         void setPeriod(uint16_t iPeriodTime);
