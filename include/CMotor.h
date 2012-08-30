@@ -3,7 +3,9 @@
 
 #include <stdint.h>
 
-class CMotor
+#include "CActor.h"
+
+class CMotor : CActor
 {
     public:
         CMotor();

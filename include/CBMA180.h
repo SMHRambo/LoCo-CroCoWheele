@@ -6,8 +6,9 @@
 
 #include "CVector.h"
 #include "CI2C.h"
+#include "CSensor.h"
 
-class CBMA180
+class CBMA180 : CSensor
 {
     public:
         CBMA180(CI2C * pI2C, uint8_t iAddress);
@@ -45,6 +46,8 @@ class CBMA180
         void stop();
         void kill();
         void run();
+        
+        virtual int8_t getValue(int16_t &iValue);
 
     protected:
     private:

@@ -410,7 +410,7 @@ build/Debug/GNU-Linux-x86/src/CBMA180.o: src/CBMA180.cpp \
  /usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
  /usr/local/include/boost/preprocessor/facilities/intercept.hpp \
  /usr/local/include/boost/utility/detail/result_of_iterate.hpp \
- src/../include/CVector.h src/../include/CI2C.h
+ src/../include/CVector.h src/../include/CI2C.h src/../include/CSensor.h
 
 src/../include/CBMA180.h:
 
@@ -1245,3 +1245,5 @@ src/../include/CBMA180.h:
 src/../include/CVector.h:
 
 src/../include/CI2C.h:
+
+src/../include/CSensor.h:

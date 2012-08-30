@@ -6,8 +6,9 @@
 
 #include "CVector.h"
 #include "CI2C.h"
+#include "CSensor.h"
 
-class CLSM303DLH
+class CLSM303DLH  : CSensor
 {
     public:
         CLSM303DLH(CI2C * pI2C, uint8_t iAddress);

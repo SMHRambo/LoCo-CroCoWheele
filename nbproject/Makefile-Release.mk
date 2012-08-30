@@ -34,15 +34,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/src/CSensor.o \
 	${OBJECTDIR}/src/CMotor.o \
+	${OBJECTDIR}/src/CPWMDriver.o \
+	${OBJECTDIR}/src/CActor.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/CBMA180.o \
 	${OBJECTDIR}/src/CVector.o \
 	${OBJECTDIR}/src/CLSM303DLH.o \
 	${OBJECTDIR}/src/CITG3200.o \
-	${OBJECTDIR}/src/RPMeter.o \
-	${OBJECTDIR}/src/PWMDriver.o \
 	${OBJECTDIR}/src/CI2C.o \
+	${OBJECTDIR}/src/CRPMeter.o \
 	${OBJECTDIR}/src/CPWM.o
 
 
@@ -70,10 +72,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/src/CSensor.o: src/CSensor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CSensor.o src/CSensor.cpp
+
 ${OBJECTDIR}/src/CMotor.o: src/CMotor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CMotor.o src/CMotor.cpp
+
+${OBJECTDIR}/src/CPWMDriver.o: src/CPWMDriver.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWMDriver.o src/CPWMDriver.cpp
+
+${OBJECTDIR}/src/CActor.o: src/CActor.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CActor.o src/CActor.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -100,20 +117,15 @@ ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
 
-${OBJECTDIR}/src/RPMeter.o: src/RPMeter.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/RPMeter.o src/RPMeter.cpp
-
-${OBJECTDIR}/src/PWMDriver.o: src/PWMDriver.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/PWMDriver.o src/PWMDriver.cpp
-
 ${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
+
+${OBJECTDIR}/src/CRPMeter.o: src/CRPMeter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CRPMeter.o src/CRPMeter.cpp
 
 ${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

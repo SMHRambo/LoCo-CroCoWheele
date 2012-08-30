@@ -408,3 +408,9 @@ void CBMA180::run()
 }
 
 // </editor-fold>
+
+int8_t CBMA180::getValue(int16_t &iValue)
+{
+    iValue = m_iAccX;
+    return 1;
+}
