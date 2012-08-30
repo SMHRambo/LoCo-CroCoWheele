@@ -75,7 +75,8 @@ class CLSM303DLH  : CSensor
         void kill();
         void run();
 
-    protected:
+        virtual int8_t getValue(int16_t &iValue, unint8_t iChannle);
+
     private:
         boost::recursive_mutex  m_LSM303DLHMutex;
         boost::thread           m_LSM303DLHThread;

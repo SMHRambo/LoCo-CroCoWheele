@@ -46,7 +46,8 @@ class CITG3200  : CSensor
         void kill();
         void run();
 
-    protected:
+        virtual int8_t getValue(int16_t &iValue, unint8_t iChannle);
+        
     private:
         boost::recursive_mutex  m_ITG3200Mutex;
         boost::thread           m_ITG3200Thread;

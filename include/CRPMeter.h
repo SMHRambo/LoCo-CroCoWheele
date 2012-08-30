@@ -17,6 +17,8 @@ class CRPMeter  : CSensor
         void kill();
         void run();
         
+        virtual int8_t getValue(int16_t &iValue, unint8_t iChannle);
+        
     private:
         boost::recursive_mutex  m_RPMeterMutex;
         boost::thread           m_RPMeterThread;

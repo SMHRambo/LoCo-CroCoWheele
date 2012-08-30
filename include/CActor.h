@@ -14,7 +14,7 @@ class CActor {
 public:
     CActor();
     virtual ~CActor();
-    virtual int8_t setValue(int16_t iValue) = 0;
+    virtual int8_t setValue(int16_t iValue, uint8_t iChannle) = 0;
 private:
 
 };

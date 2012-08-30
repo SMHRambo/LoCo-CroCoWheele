@@ -52,3 +52,19 @@ void CRPMeter::run()
 
     }
 }
+
+int8_t CRPMeter::getValue(int16_t &iValue, unint8_t iChannle);
+{
+    switch(iChannle)
+    {
+        case 0:
+            iValue = m_iSpeed;
+            break;
+        default:
+            iValue = 0;
+            return 0;
+            break;
+    }
+
+    return 1;
+}

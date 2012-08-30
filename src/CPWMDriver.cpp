@@ -78,3 +78,20 @@ uint16_t CPWMDriver::getPeriod()
     return iPeriodTime;
 }
 
+int8_t CPWMDriver::setValue(int16_t iValue, uint8_t iChannle)
+{
+    switch(iChannle)
+    {
+        case 0:
+            CPWMDriver::setPWM(0, (uint16_t)iValue);
+            break;
+        case 1:
+            CPWMDriver::setPWM(1, (uint16_t)iValue);
+            break;
+        default:
+            return 0;
+            break;
+    }
+    
+    return 1;
+}

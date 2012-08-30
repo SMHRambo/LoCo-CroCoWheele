@@ -18,6 +18,8 @@ class CPWMDriver : CActor
         uint16_t getPWM(uint8_t iCHannle);
         uint16_t getPeriod();
         
+        virtual int8_t setValue(int16_t iValue, uint8_t iChannle);
+        
     private:
         CI2C *                  m_pI2C;
         uint8_t                 m_iAddress;

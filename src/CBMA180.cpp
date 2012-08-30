@@ -409,8 +409,24 @@ void CBMA180::run()
 
 // </editor-fold>
 
-int8_t CBMA180::getValue(int16_t &iValue)
+int8_t CBMA180::getValue(int16_t &iValue, unint8_t iChannle);
 {
-    iValue = m_iAccX;
+    switch(iChannle)
+    {
+        case 0:
+            iValue = m_iAccX;
+            break;
+        case 1:
+            iValue = m_iAccY;
+            break;
+        case 2:
+            iValue = m_iAccZ;
+            break;
+        default:
+            iValue = 0;
+            return 0;
+            break;
+    }
+
     return 1;
 }

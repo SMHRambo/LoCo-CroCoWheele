@@ -3,20 +3,24 @@
 
 #include <stdint.h>
 
+#include "CPWMDriver.h"
 #include "CActor.h"
 
 class CMotor : CActor
 {
     public:
-        CMotor();
+        CMotor(CPWMDriver * pPWMDriver);
         virtual ~CMotor();
 
-        void setSpeed(uint16_t iSpeed);
-        uint16_t getSpeed();
+        void setSpeed(int16_t iSpeed);
+        int16_t getSpeed();
+        
         void stop();
+        
+        virtual int8_t setValue(int16_t iValue, uint8_t iChannle);
 
-    protected:
     private:
+        CPWMDriver *                  m_pPWMDriver;
 };
 
 #endif // CMOTOR_H

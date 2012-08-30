@@ -387,3 +387,34 @@ void CLSM303DLH::run()
         
     }
 }
+
+int8_t CLSM303DLH::getValue(int16_t &iValue, unint8_t iChannle);
+{
+    switch(iChannle)
+    {
+        case 0:
+            iValue = m_iAccX;
+            break;
+        case 1:
+            iValue = m_iAccY;
+            break;
+        case 2:
+            iValue = m_iAccZ;
+            break;
+        case 3:
+            iValue = m_iMagX;
+            break;
+        case 4:
+            iValue = m_iMagY;
+            break;
+        case 5:
+            iValue = m_iMagZ;
+            break;
+        default:
+            iValue = 0;
+            return 0;
+            break;
+    }
+
+    return 1;
+}

@@ -222,3 +222,25 @@ void CITG3200::run()
         
     }
 }
+
+int8_t CITG3200::getValue(int16_t &iValue, unint8_t iChannle);
+{
+    switch(iChannle)
+    {
+        case 0:
+            iValue = m_iGyroX;
+            break;
+        case 1:
+            iValue = m_iGyroY;
+            break;
+        case 2:
+            iValue = m_iGyroZ;
+            break;
+        default:
+            iValue = 0;
+            return 0;
+            break;
+    }
+
+    return 1;
+}
