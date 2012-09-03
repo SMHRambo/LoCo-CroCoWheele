@@ -31,7 +31,7 @@ DEFAULTCONF=Debug
 CONF=${DEFAULTCONF}
 
 # All Configurations
-ALLCONFS=Debug Release RemoteDebug 
+ALLCONFS=Debug Release 
 
 
 # build

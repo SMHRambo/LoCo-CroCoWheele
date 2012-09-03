@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux-x86
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -41,8 +41,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/CActor.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/CBMA180.o \
-	${OBJECTDIR}/src/CVector.o \
 	${OBJECTDIR}/src/CLSM303DLH.o \
+	${OBJECTDIR}/src/CVector.o \
 	${OBJECTDIR}/src/CITG3200.o \
 	${OBJECTDIR}/src/CI2C.o \
 	${OBJECTDIR}/src/CRPMeter.o \
@@ -67,11 +67,11 @@ LDLIBSOPTIONS=-L/usr/local/lib -lboost_exception -lboost_iostreams -lboost_local
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele.exe ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/src/CSensor.o: src/CSensor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -103,15 +103,15 @@ ${OBJECTDIR}/src/CBMA180.o: src/CBMA180.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
 
-${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
-
 ${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
+
+${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
 
 ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -139,7 +139,7 @@ ${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele
 
 # Subprojects
 .clean-subprojects:

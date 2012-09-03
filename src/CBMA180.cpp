@@ -1,6 +1,5 @@
 #include "../include/CBMA180.h"
 
-// <editor-fold defaultstate="collapsed" desc=" CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress) ">
 
 CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
 {
@@ -9,14 +8,10 @@ CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
     m_bStop = false;
 }
 
-// </editor-fold>
-
 CBMA180::~CBMA180()
 {
 
 }
-
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccXRaw ">
 
 uint16_t CBMA180::getAccXRaw()
 {
@@ -31,10 +26,6 @@ uint16_t CBMA180::getAccXRaw()
     return iAccX;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccYRaw ">
-
 uint16_t CBMA180::getAccYRaw()
 {
     uint16_t iAccY = 0;
@@ -47,10 +38,6 @@ uint16_t CBMA180::getAccYRaw()
 
     return iAccY;
 }
-
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccZRaw ">
 
 uint16_t CBMA180::getAccZRaw()
 {
@@ -65,119 +52,132 @@ uint16_t CBMA180::getAccZRaw()
     return iAccZ;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccX() ">
-
-double CBMA180::getAccX()
+int16_t CBMA180::getAccXSignedRaw()
 {
-    double iAccX = 0;
+    uint16_t iAccX = 0;
 
     m_BMA180Mutex.lock();
 
-    iAccX = m_iAccX;
+    iAccX = m_iAccX << (16 - m_iBits);
 
     m_BMA180Mutex.unlock();
 
     return iAccX;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccY() ">
-
-double CBMA180::getAccY()
+int16_t CBMA180::getAccYSignedRaw()
 {
-    double iAccY = 0;
+    uint16_t iAccY = 0;
 
     m_BMA180Mutex.lock();
 
-    iAccY = m_iAccY;
+    iAccY = m_iAccY << (16 - m_iBits);
 
     m_BMA180Mutex.unlock();
 
     return iAccY;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccZ() ">
-
-double CBMA180::getAccZ()
+int16_t CBMA180::getAccZSignedRaw()
 {
-    double iAccZ = 0;
+    uint16_t iAccZ = 0;
 
     m_BMA180Mutex.lock();
 
-    iAccZ = m_iAccZ;
+    iAccZ = m_iAccZ << (16 - m_iBits);
 
     m_BMA180Mutex.unlock();
 
     return iAccZ;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccAlpha() ">
-
-double CBMA180::getAccAlpha() {
-    double iAlpha = 0;
+float CBMA180::getAccX()
+{
+    float fAccX = 0;
 
     m_BMA180Mutex.lock();
 
-    iAlpha = m_iAccX / sqrt(m_iAccX^2 + m_iAccY^2 + m_iAccZ^2);
-
+    fAccX = ((float)(m_iAccX << (16 - m_iBits)) / 32768) * m_iRange;
+    
     m_BMA180Mutex.unlock();
-
-    return iAlpha;
+    
+    return fAccX;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccBeta() ">
-
-double CBMA180::getAccBeta() {
-    double iBeta = 0;
+float CBMA180::getAccY()
+{
+    float fAccY = 0;
 
     m_BMA180Mutex.lock();
 
-    iBeta = m_iAccY / sqrt(m_iAccX^2 + m_iAccY^2 + m_iAccZ^2);
+    fAccY = ((float)(m_iAccY << (16 - m_iBits)) / 32768) * m_iRange;
 
     m_BMA180Mutex.unlock();
 
-    return iBeta;
+    return fAccY;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" double CBMA180::getAccGamma() ">
-
-double CBMA180::getAccGamma() {
-    double iGamma = 0;
+float CBMA180::getAccZ()
+{
+    float fAccZ = 0;
 
     m_BMA180Mutex.lock();
 
-    iGamma = m_iAccZ / sqrt(m_iAccX^2 + m_iAccY^2 + m_iAccZ^2);
+    fAccZ = ((float)(m_iAccZ << (16 - m_iBits)) / 32768) * m_iRange;
 
     m_BMA180Mutex.unlock();
 
-    return iGamma;
+    return fAccZ;
 }
 
-// </editor-fold>
+float CBMA180::getAccAlpha()
+{
+    float fAlpha = 0;
+
+    m_BMA180Mutex.lock();
+
+    fAlpha = getAccX() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+
+    m_BMA180Mutex.unlock();
+
+    return fAlpha;
+}
+
+float CBMA180::getAccBeta()
+{
+    float fBeta = 0;
+
+    m_BMA180Mutex.lock();
+
+    fBeta = getAccY() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+
+    m_BMA180Mutex.unlock();
+
+    return fBeta;
+}
+
+float CBMA180::getAccGamma()
+{
+    float fGamma = 0;
+
+    m_BMA180Mutex.lock();
+
+    fGamma = getAccZ() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+
+    m_BMA180Mutex.unlock();
+
+    return fGamma;
+}
 
 CVector CBMA180::getVector()
 {
 
 }
 
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccXRawPerI2C() ">
-
 uint16_t CBMA180::getAccXRawPerI2C()
 {
     std::vector<uint8_t> viData;
     uint16_t iX = 0;
-    uint8_t * piX = (uint8_t*) & iX;
 
     viData.push_back(0x06);
 
@@ -185,8 +185,7 @@ uint16_t CBMA180::getAccXRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        piX[0] = viData.at(0);
-        piX[1] = viData.at(1);
+        iX = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits);
     }
     
     m_pI2C->unlock();
@@ -194,15 +193,10 @@ uint16_t CBMA180::getAccXRawPerI2C()
     return iX;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccYRawPerI2C( ">
-
 uint16_t CBMA180::getAccYRawPerI2C()
 {
     std::vector<uint8_t> viData;
     uint16_t iY = 0;
-    uint8_t * piY = (uint8_t*) & iY;
 
     viData.push_back(0x04);
 
@@ -210,23 +204,17 @@ uint16_t CBMA180::getAccYRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        piY[0] = viData.at(0);
-        piY[1] = viData.at(1);
+        iY = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits);
     }
     m_pI2C->unlock();
 
     return iY;
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" uint16_t CBMA180::getAccZRawPerI2C() ">
-
 uint16_t CBMA180::getAccZRawPerI2C()
 {
     std::vector<uint8_t> viData;
     uint16_t iZ = 0;
-    uint8_t * piZ = (uint8_t*) & iZ;
 
     viData.push_back(0x02);
 
@@ -234,20 +222,73 @@ uint16_t CBMA180::getAccZRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        piZ[0] = viData.at(0);
-        piZ[1] = viData.at(1);
+        iZ = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits);
     }
     m_pI2C->unlock();
 
     return iZ;
 }
 
-// </editor-fold>
+int16_t CBMA180::getAccXSignedRawPerI2C()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iX = 0;
 
-double CBMA180::getAccXPerI2C()
+    viData.push_back(0x06);
+
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 2))
+    {
+        iX = (*((uint16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits);
+    }
+    
+    m_pI2C->unlock();
+
+    return iX;
+}
+
+int16_t CBMA180::getAccYSignedRawPerI2C()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iY = 0;
+
+    viData.push_back(0x04);
+
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 2))
+    {
+        iY = (*((uint16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits);
+    }
+    m_pI2C->unlock();
+
+    return iY;
+}
+
+int16_t CBMA180::getAccZSignedRawPerI2C()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iZ = 0;
+
+    viData.push_back(0x02);
+
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 2))
+    {
+        iZ = (*((uint16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits);
+    }
+    m_pI2C->unlock();
+
+    return iZ;
+}
+
+float CBMA180::getAccXPerI2C()
 {
     std::vector<uint8_t>        viData;
     uint16_t                    iX = 0;
+    float                       fX = 0;
     
     viData.push_back(0x06);
     
@@ -255,17 +296,22 @@ double CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iX = *((uint16_t *)viData.data());
+        iX = (*((uint16_t *)viData.data()) >> (16 - m_iBits)) << (16 - m_iBits);
     }
     m_pI2C->unlock();
-
-    return iX;
+    
+    fX = (float)iX / 32768;
+    
+    fX *= m_iRange;
+    
+    return fX;
 }
 
-double CBMA180::getAccYPerI2C()
+float CBMA180::getAccYPerI2C()
 {
     std::vector<uint8_t>        viData;
     uint16_t                    iY = 0;
+    float                       fY = 0;
     
     viData.push_back(0x04);
     
@@ -273,18 +319,22 @@ double CBMA180::getAccYPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iY = *((uint16_t *)viData.data());
+        iY = (*((uint16_t *)viData.data()) >> (16 - m_iBits)) << (16 - m_iBits);
     }
     m_pI2C->unlock();
-
-    return iY;
+    
+    fY = (float)iY / 32768;
+    
+    fY *= m_iRange;
+    
+    return fY;
 }
 
-double CBMA180::getAccZPerI2C()
+float CBMA180::getAccZPerI2C()
 {
-    std::vector<uint8_t>  viData;
-    uint16_t            iZ = 0;
-    double              dZ = 0;
+    std::vector<uint8_t>        viData;
+    uint16_t                    iZ = 0;
+    float                       fZ = 0;
     
     viData.push_back(0x02);
     
@@ -292,50 +342,84 @@ double CBMA180::getAccZPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iZ = *((uint16_t *)viData.data());
+        iZ = (*((uint16_t *)viData.data()) >> (16 - m_iBits)) << (16 - m_iBits);
     }
     m_pI2C->unlock();
     
-    iZ = iZ<<(16-2);
+    fZ = (float)iZ / 32768;
     
-    dZ = iZ/32765;
+    fZ *= m_iRange;
     
-    dZ = dZ*4;
-
-    return dZ;
+    return fZ;
 }
 
-double CBMA180::getAccAlphaPerI2C()
+float CBMA180::getAccAlphaPerI2C()
 {
-    std::vector<uint8_t> viData;
+    std::vector<uint8_t>        viData;
+    float                       fX = 0;
+    float                       fY = 0;
+    float                       fZ = 0;
+    
+    
     viData.push_back(0x02);
     
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress,viData);
-    m_pI2C->readI2C(m_iAddress,viData,6);
+    if(m_pI2C->readI2C(m_iAddress,viData,6))
+    {
+        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+    }
     m_pI2C->unlock();
+    
+    return fX / sqrt(fX^2 + fY^2 + fZ^2);
 }
 
-double CBMA180::getAccBetaPerI2C()
+float CBMA180::getAccBetaPerI2C()
 {
-    std::vector<uint8_t> viData;
+    std::vector<uint8_t>        viData;
+    float                       fX = 0;
+    float                       fY = 0;
+    float                       fZ = 0;
+    
+    
     viData.push_back(0x02);
     
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress,viData);
-    m_pI2C->readI2C(m_iAddress,viData,6);
+    if(m_pI2C->readI2C(m_iAddress,viData,6))
+    {
+        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+    }
     m_pI2C->unlock();
+    
+    return fY / sqrt(fX^2 + fY^2 + fZ^2);
 }
 
-double CBMA180::getAccGammaPerI2C()
+float CBMA180::getAccGammaPerI2C()
 {
-    std::vector<uint8_t> viData;
+    std::vector<uint8_t>        viData;
+    float                       fX = 0;
+    float                       fY = 0;
+    float                       fZ = 0;
+    
+    
     viData.push_back(0x02);
     
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress,viData);
-    m_pI2C->readI2C(m_iAddress,viData,6);
+    if(m_pI2C->readI2C(m_iAddress,viData,6))
+    {
+        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
+        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+    }
     m_pI2C->unlock();
+    
+    return fZ / sqrt(fX^2 + fY^2 + fZ^2);
 }
 
 CVector CBMA180::getVectorPerI2C()
@@ -349,16 +433,10 @@ CVector CBMA180::getVectorPerI2C()
     m_pI2C->unlock();
 }
 
-// <editor-fold defaultstate="collapsed" desc=" void CBMA180::start() ">
-
 void CBMA180::start()
 {
     m_BMA180Thread = boost::thread(&CBMA180::run, this);
 }
-
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" void CBMA180::stop() ">
 
 void CBMA180::stop()
 {
@@ -366,19 +444,11 @@ void CBMA180::stop()
     m_BMA180Thread.join();
 }
 
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" void CBMA180::kill() ">
-
 void CBMA180::kill()
 {
     m_BMA180Thread.interrupt();
     m_BMA180Thread.join();
 }
-
-// </editor-fold>
-
-// <editor-fold defaultstate="collapsed" desc=" void CBMA180::run() ">
 
 void CBMA180::run()
 {
@@ -394,9 +464,9 @@ void CBMA180::run()
             m_pI2C->writeI2C(m_iAddress, viDataOUT);
             if (m_pI2C->readI2C(m_iAddress, viDataIN, 6))
             {
-                m_iAccX = *((int16_t *)&viDataIN.at(4));
-                m_iAccY = *((int16_t *)&viDataIN.at(2));
-                m_iAccZ = *((int16_t *)&viDataIN.at(0));
+                m_iAccX = *((int16_t *)&viDataIN.at(4)) >> (16 - m_iBits);
+                m_iAccY = *((int16_t *)&viDataIN.at(2)) >> (16 - m_iBits);
+                m_iAccZ = *((int16_t *)&viDataIN.at(0)) >> (16 - m_iBits);
             }
             m_pI2C->unlock();
         }
@@ -407,20 +477,45 @@ void CBMA180::run()
     }
 }
 
-// </editor-fold>
-
-int8_t CBMA180::getValue(int16_t &iValue, uint8_t iChannle)
+bool CBMA180::getValue(float &iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {
         case 0:
-            iValue = m_iAccX;
+            iValue = getAccX();
             break;
         case 1:
-            iValue = m_iAccY;
+            iValue = getAccY();
             break;
         case 2:
-            iValue = m_iAccZ;
+            iValue = getAccZ();
+            break;
+        case 3:
+            iValue = getAccXPerI2C();
+            break;
+        case 4:
+            iValue = getAccYPerI2C();
+            break;
+        case 5:
+            iValue = getAccZPerI2C();
+            break;
+        case 6:
+            iValue = getAccAlpha();
+            break;
+        case 7:
+            iValue = getAccBeta();
+            break;
+        case 8:
+            iValue = getAccGamma();
+            break;
+        case 9:
+            iValue = getAccAlphaPerI2C();
+            break;
+        case 10:
+            iValue = getAccBetaPerI2C();
+            break;
+        case 11:
+            iValue = getAccGammaPerI2C();
             break;
         default:
             iValue = 0;

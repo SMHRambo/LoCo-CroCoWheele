@@ -19,10 +19,6 @@
                     <name>Release</name>
                     <type>1</type>
                 </confElem>
-                <confElem>
-                    <name>RemoteDebug</name>
-                    <type>1</type>
-                </confElem>
             </confList>
         </data>
     </configuration>

@@ -10,26 +10,26 @@ class CVector
         CVector();
         virtual ~CVector();
 
-        void setX(int16_t iX);
-        void setY(int16_t iY);
-        void setZ(int16_t iZ);
+        void setX(float iX);
+        void setY(float iY);
+        void setZ(float iZ);
         
-        int16_t getX();
-        int16_t getY();
-        int16_t getZ();
+        float getX();
+        float getY();
+        float getZ();
 
-        double getLengt();
+        float getLengt();
 
-        double getAlpha();
-        double getBeta();
-        double getGamma();
+        float getAlpha();
+        float getBeta();
+        float getGamma();
 
     protected:
     private:
         boost::mutex m_VectorMutex;
-        int16_t m_iX;
-        int16_t m_iY;
-        int16_t m_iZ;
+        float m_iX;
+        float m_iY;
+        float m_iZ;
 };
 
 #endif // VECTOR_H

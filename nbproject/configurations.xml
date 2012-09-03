@@ -69,7 +69,7 @@
     <conf name="Debug" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
       </toolsSet>
       <compileType>
         <ccTool>
@@ -96,7 +96,7 @@
     <conf name="Release" type="1">
       <toolsSet>
         <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
       </toolsSet>
       <compileType>
         <cTool>
@@ -111,14 +111,6 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
-      </compileType>
-    </conf>
-    <conf name="RemoteDebug" type="1">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
-      </toolsSet>
-      <compileType>
       </compileType>
     </conf>
   </confs>
