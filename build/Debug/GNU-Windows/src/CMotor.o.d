@@ -1,4 +1,4 @@
-build/Debug/GNU-Linux-x86/src/CMotor.o: src/CMotor.cpp \
+build/Debug/GNU-Windows/src/CMotor.o: src/CMotor.cpp \
  src/../include/CMotor.h src/../include/CPWMDriver.h \
  src/../include/CI2C.h /usr/local/include/boost/thread.hpp \
  /usr/local/include/boost/thread/thread.hpp \

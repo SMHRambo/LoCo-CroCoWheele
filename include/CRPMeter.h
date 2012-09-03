@@ -5,6 +5,7 @@
 #include <boost/thread.hpp>
 
 #include "CI2C.h"
+#include "CSensor.h"
 
 class CRPMeter  : CSensor
 {
@@ -17,7 +18,7 @@ class CRPMeter  : CSensor
         void kill();
         void run();
         
-        virtual int8_t getValue(int16_t &iValue, unint8_t iChannle);
+        virtual int8_t getValue(int16_t &iValue, uint8_t iChannle);
         
     private:
         boost::recursive_mutex  m_RPMeterMutex;
@@ -25,6 +26,7 @@ class CRPMeter  : CSensor
         bool                    m_bStop;
         CI2C *                  m_pI2C;
         uint8_t                 m_iAddress;
+        int16_t                 m_iSpeed;
 
 };
 

@@ -6,8 +6,8 @@
 
 # Macros
 TOP=`pwd`
-CND_PLATFORM=GNU-Windows
-CND_CONF=Debug
+CND_PLATFORM=GNU-Linux-x86
+CND_CONF=RemoteDebug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging

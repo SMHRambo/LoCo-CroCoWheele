@@ -1,6 +1,6 @@
 #include "../include/CMotor.h"
 
-CMotor::CMotor()
+CMotor::CMotor(CPWMDriver * pPWMDriver, uint8_t iChannle)
 {
     //ctor
 }

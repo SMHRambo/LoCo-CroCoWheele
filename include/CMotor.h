@@ -9,7 +9,7 @@
 class CMotor : CActor
 {
     public:
-        CMotor(CPWMDriver * pPWMDriver);
+        CMotor(CPWMDriver * pPWMDriver, uint8_t iChannle);
         virtual ~CMotor();
 
         void setSpeed(int16_t iSpeed);

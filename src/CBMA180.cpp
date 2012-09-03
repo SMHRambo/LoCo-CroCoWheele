@@ -409,7 +409,7 @@ void CBMA180::run()
 
 // </editor-fold>
 
-int8_t CBMA180::getValue(int16_t &iValue, unint8_t iChannle);
+int8_t CBMA180::getValue(int16_t &iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {

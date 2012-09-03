@@ -223,7 +223,7 @@ void CITG3200::run()
     }
 }
 
-int8_t CITG3200::getValue(int16_t &iValue, unint8_t iChannle);
+int8_t CITG3200::getValue(int16_t &iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {

@@ -14,7 +14,7 @@ class CSensor {
 public:
     CSensor();
     virtual ~CSensor();
-    virtual int8_t getValue(int16_t &iValue, unint8_t iChannle) = 0;
+    virtual int8_t getValue(int16_t &iValue, uint8_t iChannle) = 0;
 private:
 
 };

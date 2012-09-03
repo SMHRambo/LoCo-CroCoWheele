@@ -1,6 +1,5 @@
-build/Debug/GNU-Linux-x86/src/CMotor.o: src/CMotor.cpp \
- src/../include/CMotor.h src/../include/CPWMDriver.h \
- src/../include/CI2C.h /usr/local/include/boost/thread.hpp \
+build/Debug/GNU-Windows/main.o: main.cpp include/CI2C.h \
+ /usr/local/include/boost/thread.hpp \
  /usr/local/include/boost/thread/thread.hpp \
  /usr/local/include/boost/thread/detail/platform.hpp \
  /usr/local/include/boost/config.hpp \
@@ -411,13 +410,9 @@ build/Debug/GNU-Linux-x86/src/CMotor.o: src/CMotor.cpp \
  /usr/local/include/boost/preprocessor/repetition/enum_shifted_params.hpp \
  /usr/local/include/boost/preprocessor/facilities/intercept.hpp \
  /usr/local/include/boost/utility/detail/result_of_iterate.hpp \
- src/../include/CActor.h
+ include/CBMA180.h include/CVector.h include/CI2C.h include/CSensor.h
 
-src/../include/CMotor.h:
-
-src/../include/CPWMDriver.h:
-
-src/../include/CI2C.h:
+include/CI2C.h:
 
 /usr/local/include/boost/thread.hpp:
 
@@ -1247,4 +1242,10 @@ src/../include/CI2C.h:
 
 /usr/local/include/boost/utility/detail/result_of_iterate.hpp:
 
-src/../include/CActor.h:
+include/CBMA180.h:
+
+include/CVector.h:
+
+include/CI2C.h:
+
+include/CSensor.h:
