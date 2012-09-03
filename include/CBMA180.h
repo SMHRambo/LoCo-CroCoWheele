@@ -18,13 +18,18 @@ class CBMA180 : CSensor
         uint16_t getAccYRaw();
         uint16_t getAccZRaw();
 
-        double getAccX();
-        double getAccY();
-        double getAccZ();
+        int16_t getAccXSignedRaw();
+        int16_t getAccYSignedRaw();
+        int16_t getAccZSignedRaw();
+        
+        
+        float getAccX();
+        float getAccY();
+        float getAccZ();
 
-        double getAccAlpha();
-        double getAccBeta();
-        double getAccGamma();
+        float getAccAlpha();
+        float getAccBeta();
+        float getAccGamma();
 
         CVector getVector();
 
@@ -32,13 +37,17 @@ class CBMA180 : CSensor
         uint16_t getAccYRawPerI2C();
         uint16_t getAccZRawPerI2C();
 
-        double getAccXPerI2C();
-        double getAccYPerI2C();
-        double getAccZPerI2C();
+        int16_t getAccXSignedRawPerI2C();
+        int16_t getAccYSignedRawPerI2C();
+        int16_t getAccZSignedRawPerI2C();        
+        
+        float getAccXPerI2C();
+        float getAccYPerI2C();
+        float getAccZPerI2C();
 
-        double getAccAlphaPerI2C();
-        double getAccBetaPerI2C();
-        double getAccGammaPerI2C();
+        float getAccAlphaPerI2C();
+        float getAccBetaPerI2C();
+        float getAccGammaPerI2C();
 
         CVector getVectorPerI2C();
 
@@ -47,7 +56,7 @@ class CBMA180 : CSensor
         void kill();
         void run();
         
-        virtual int8_t getValue(int16_t &iValue, uint8_t iChannle);
+        virtual int8_t getValue(float &iValue, uint8_t iChannle);
 
     private:
         boost::recursive_mutex  m_BMA180Mutex;
