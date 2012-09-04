@@ -56,7 +56,7 @@ class CBMA180 : CSensor
         void kill();
         void run();
         
-        virtual int8_t getValue(float &iValue, uint8_t iChannle);
+        virtual bool getValue(float &iValue, uint8_t iChannle);
 
     private:
         boost::recursive_mutex  m_BMA180Mutex;

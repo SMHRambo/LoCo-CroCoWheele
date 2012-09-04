@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/CVector.o \
 	${OBJECTDIR}/src/CITG3200.o \
 	${OBJECTDIR}/src/CI2C.o \
+	${OBJECTDIR}/src/PIDRegler.o \
 	${OBJECTDIR}/src/CRPMeter.o \
 	${OBJECTDIR}/src/CPWM.o
 
@@ -122,6 +123,11 @@ ${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
+
+${OBJECTDIR}/src/PIDRegler.o: src/PIDRegler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/PIDRegler.o src/PIDRegler.cpp
 
 ${OBJECTDIR}/src/CRPMeter.o: src/CRPMeter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

@@ -10,7 +10,7 @@ CVector::~CVector()
 
 }
 
-void CVector::setX(int16_t iX)
+void CVector::setX(float iX)
 {
     m_VectorMutex.lock();
     
@@ -19,7 +19,7 @@ void CVector::setX(int16_t iX)
     m_VectorMutex.unlock();    
 }
 
-void CVector::setY(int16_t iY)
+void CVector::setY(float iY)
 {
     m_VectorMutex.lock();
     
@@ -28,7 +28,7 @@ void CVector::setY(int16_t iY)
     m_VectorMutex.unlock();   
 }
 
-void CVector::setZ(int16_t iZ)
+void CVector::setZ(float iZ)
 {
     m_VectorMutex.lock();
     
@@ -37,9 +37,9 @@ void CVector::setZ(int16_t iZ)
     m_VectorMutex.unlock();    
 }
 
-int16_t CVector::getX()
+float CVector::getX()
 {
-    uint16_t iX = 0;
+    float iX = 0;
     
     m_VectorMutex.lock();
     
@@ -50,9 +50,9 @@ int16_t CVector::getX()
     return iX;
 }
 
-int16_t CVector::getY()
+float CVector::getY()
 {
-    uint16_t iY = 0;
+    float iY = 0;
     
     m_VectorMutex.lock();
     
@@ -63,9 +63,9 @@ int16_t CVector::getY()
     return iY;
 }
 
-int16_t CVector::getZ()
+float CVector::getZ()
 {
-    uint16_t iZ = 0;
+    float iZ = 0;
     
     m_VectorMutex.lock();
     
@@ -76,52 +76,52 @@ int16_t CVector::getZ()
     return iZ;
 }
 
-double CVector::getLengt()
+float CVector::getLengt()
 {
-    double iLength = 0;
+    float iLength = 0;
     
     m_VectorMutex.lock();
     
-    iLength = sqrt(m_iX^2 + m_iY^2 + m_iZ^2);
+    iLength = sqrt(pow(m_iX, 2) + pow(m_iY, 2) + pow(m_iZ, 2));
     
     m_VectorMutex.unlock();
     
     return iLength;
 }
 
-double CVector::getAlpha()
+float CVector::getAlpha()
 {
-    double iAlpha = 0;
+    float iAlpha = 0;
     
     m_VectorMutex.lock();
     
-    iAlpha = m_iX / sqrt(m_iX^2 + m_iY^2 + m_iZ^2);
+    iAlpha = m_iX / sqrt(pow(m_iX, 2) + pow(m_iY, 2) + pow(m_iZ, 2));
     
     m_VectorMutex.unlock();
     
     return iAlpha;
 }
 
-double CVector::getBeta()
+float CVector::getBeta()
 {
-    double iBeta = 0;
+    float iBeta = 0;
     
     m_VectorMutex.lock();
     
-    iBeta = m_iY / sqrt(m_iX^2 + m_iY^2 + m_iZ^2);
+    iBeta = m_iY / sqrt(pow(m_iX, 2) + pow(m_iY, 2) + pow(m_iZ ,2));
     
     m_VectorMutex.unlock();
     
     return iBeta;
 }
 
-double CVector::getGamma()
+float CVector::getGamma()
 {
-    double iGamma = 0;
+    float iGamma = 0;
     
     m_VectorMutex.lock();
     
-    iGamma = m_iZ / sqrt(m_iX^2 + m_iY^2 + m_iZ^2);
+    iGamma = m_iZ / sqrt(pow(m_iX, 2) + pow(m_iY, 2) + pow(m_iZ, 2));
     
     m_VectorMutex.unlock();
     

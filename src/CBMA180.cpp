@@ -136,7 +136,7 @@ float CBMA180::getAccAlpha()
 
     m_BMA180Mutex.lock();
 
-    fAlpha = getAccX() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+    fAlpha = getAccX() / sqrt(pow(getAccX(), 2) + pow(getAccY(), 2) + pow(getAccZ(), 2));
 
     m_BMA180Mutex.unlock();
 
@@ -149,7 +149,7 @@ float CBMA180::getAccBeta()
 
     m_BMA180Mutex.lock();
 
-    fBeta = getAccY() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+    fBeta = getAccY() / sqrt(pow(getAccX(), 2) + pow(getAccY(), 2) + pow(getAccZ(), 2));
 
     m_BMA180Mutex.unlock();
 
@@ -162,7 +162,7 @@ float CBMA180::getAccGamma()
 
     m_BMA180Mutex.lock();
 
-    fGamma = getAccZ() / sqrt(getAccX()^2 + getAccY()^2 + getAccZ()^2);
+    fGamma = getAccZ() / sqrt(pow(getAccX(), 2) + pow(getAccY(), 2) + pow(getAccZ(), 2));
 
     m_BMA180Mutex.unlock();
 
@@ -367,13 +367,13 @@ float CBMA180::getAccAlphaPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,6))
     {
-        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+        fX = ((float)((*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fY = ((float)((*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fZ = ((float)((*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;       
     }
     m_pI2C->unlock();
     
-    return fX / sqrt(fX^2 + fY^2 + fZ^2);
+    return fX / sqrt(pow(fX, 2) + pow(fY, 2) + pow(fZ, 2));
 }
 
 float CBMA180::getAccBetaPerI2C()
@@ -390,13 +390,13 @@ float CBMA180::getAccBetaPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,6))
     {
-        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+        fX = ((float)((*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fY = ((float)((*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fZ = ((float)((*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;       
     }
     m_pI2C->unlock();
     
-    return fY / sqrt(fX^2 + fY^2 + fZ^2);
+    return fY / sqrt(pow(fX, 2) + pow(fY, 2) + pow(fZ, 2));
 }
 
 float CBMA180::getAccGammaPerI2C()
@@ -413,13 +413,13 @@ float CBMA180::getAccGammaPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,6))
     {
-        fX = ((float)(*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fY = ((float)(*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;
-        fZ = ((float)(*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits) / 32768) * m_iRange;       
+        fX = ((float)((*((int16_t *)&viData.at(4)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fY = ((float)((*((int16_t *)&viData.at(2)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;
+        fZ = ((float)((*((int16_t *)&viData.at(0)) >> (16 - m_iBits)) << (16 - m_iBits)) / 32768) * m_iRange;       
     }
     m_pI2C->unlock();
     
-    return fZ / sqrt(fX^2 + fY^2 + fZ^2);
+    return fZ / sqrt(pow(fX, 2) + pow(fY, 2) + pow(fZ, 2));
 }
 
 CVector CBMA180::getVectorPerI2C()
