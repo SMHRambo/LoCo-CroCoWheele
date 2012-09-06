@@ -14,8 +14,9 @@
         <itemPath>include/CPWM.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="HelperClasses" projectFiles="true">
+        <itemPath>include/CKalmanFilter.h</itemPath>
+        <itemPath>include/CPIDRegler.h</itemPath>
         <itemPath>include/CVector.h</itemPath>
-        <itemPath>include/PIDRegler.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="SensorClasses" projectFiles="true">
         <itemPath>include/CBMA180.h</itemPath>
@@ -42,8 +43,9 @@
         <itemPath>src/CPWM.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f3" displayName="HelperClasses" projectFiles="true">
+        <itemPath>src/CKalmanFilter.cpp</itemPath>
+        <itemPath>src/CPIDRegler.cpp</itemPath>
         <itemPath>src/CVector.cpp</itemPath>
-        <itemPath>src/PIDRegler.cpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="SensorClasses" projectFiles="true">
         <itemPath>src/CBMA180.cpp</itemPath>

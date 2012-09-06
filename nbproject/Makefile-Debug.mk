@@ -39,13 +39,14 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/CMotor.o \
 	${OBJECTDIR}/src/CPWMDriver.o \
 	${OBJECTDIR}/src/CActor.o \
+	${OBJECTDIR}/src/CPIDRegler.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/CBMA180.o \
-	${OBJECTDIR}/src/CLSM303DLH.o \
 	${OBJECTDIR}/src/CVector.o \
+	${OBJECTDIR}/src/CKalmanFilter.o \
+	${OBJECTDIR}/src/CLSM303DLH.o \
 	${OBJECTDIR}/src/CITG3200.o \
 	${OBJECTDIR}/src/CI2C.o \
-	${OBJECTDIR}/src/PIDRegler.o \
 	${OBJECTDIR}/src/CRPMeter.o \
 	${OBJECTDIR}/src/CPWM.o
 
@@ -94,6 +95,11 @@ ${OBJECTDIR}/src/CActor.o: src/CActor.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CActor.o src/CActor.cpp
 
+${OBJECTDIR}/src/CPIDRegler.o: src/CPIDRegler.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPIDRegler.o src/CPIDRegler.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
@@ -104,15 +110,20 @@ ${OBJECTDIR}/src/CBMA180.o: src/CBMA180.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
 
-${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
-
 ${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
+
+${OBJECTDIR}/src/CKalmanFilter.o: src/CKalmanFilter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CKalmanFilter.o src/CKalmanFilter.cpp
+
+${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
 
 ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -123,11 +134,6 @@ ${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
-
-${OBJECTDIR}/src/PIDRegler.o: src/PIDRegler.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/PIDRegler.o src/PIDRegler.cpp
 
 ${OBJECTDIR}/src/CRPMeter.o: src/CRPMeter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
