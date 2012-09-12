@@ -40,6 +40,11 @@ void CPIDRegler::setKd(float Kd)
     m_Kd = Kd;
 }
 
+void CPIDRegler::setTime(uint16_t iTime)
+{
+    m_iTime = iTime;
+}
+
 float CPIDRegler::getKp()
 {
     return m_Kp;
@@ -53,6 +58,11 @@ float CPIDRegler::getKi()
 float CPIDRegler::getKd()
 {
     return m_Kd;
+}
+
+uint16_t CPIDRegler::getTime()
+{
+    return m_iTime;
 }
 
 void CPIDRegler::start()
@@ -78,10 +88,16 @@ void CPIDRegler::run()
     {
         while (!m_bStop)
         {
+            m_iTimeNow = getTime();
+            
             m_e = m_soll - m_pSensor(m_iSensorChannle);
             m_esum = m_esum + m_e;
-            m_pActor(m_Kp * m_e + m_Ki * Ta * m_esum + m_Kd * (m_e - m_ealt) / Ta, m_iActorChannle);
+            m_pActor(m_Kp * m_e + m_Ki * m_iTime * m_esum + m_Kd * (m_e - m_ealt) / m_iTime, m_iActorChannle);
             m_ealt = m_e;
+            
+            m_iTimeNow -= getTime();
+            
+            delay_ms(m_iTime - m_iTimeNow);
         }
     }
     catch (boost::thread_interrupted&)

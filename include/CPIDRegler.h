@@ -25,10 +25,12 @@ class CPIDRegler
         void setKp(float Kp);
         void setKi(float Ki);
         void setKd(float Kd);
+        void setTime(uint16_t iTime);
         
         float getKp();
         float getKi();
         float getKd();        
+        uint16_t getTime();
         
         void start();
         void stop();
@@ -46,6 +48,8 @@ class CPIDRegler
         float                   m_Kp;                   //proportionaler Verstärkungsfaktor
         float                   m_Ki;                   //integraler Verstärkungsfaktor
         float                   m_Kd;                   //differentialer Verstärkungsfaktor
+        uint16_t                m_iTime;
+        uint16_t                m_iTimeNow;
         CSensor*                m_pSensor;              //Pointer auf den Sensors
         uint8_t                 m_iSensorChannle;       //Zu benutzende Funktion des Sensors
         CActor*                 m_pActor;               //Pointer auf den Actors
