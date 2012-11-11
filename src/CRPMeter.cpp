@@ -53,7 +53,7 @@ void CRPMeter::run()
     }
 }
 
-int8_t CRPMeter::getValue(int16_t &iValue, uint8_t iChannle)
+bool CRPMeter::getValue(float &iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {
