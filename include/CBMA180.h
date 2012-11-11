@@ -8,7 +8,7 @@
 #include "CI2C.h"
 #include "CSensor.h"
 
-class CBMA180 : CSensor
+class CBMA180 : public CSensor
 {
     public:
         CBMA180(CI2C * pI2C, uint8_t iAddress);

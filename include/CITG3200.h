@@ -8,7 +8,7 @@
 #include "CI2C.h"
 #include "CSensor.h"
 
-class CITG3200  : CSensor
+class CITG3200 : public CSensor
 {
     public:
         CITG3200(CI2C * pI2C, uint8_t iAddress);

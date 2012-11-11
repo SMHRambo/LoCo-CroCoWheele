@@ -6,7 +6,7 @@
 #include "CPWMDriver.h"
 #include "CActor.h"
 
-class CMotor : CActor
+class CMotor : public CActor
 {
     public:
         CMotor(CPWMDriver * pPWMDriver, uint8_t iChannle);
