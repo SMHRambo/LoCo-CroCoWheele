@@ -5,7 +5,7 @@
  * Created on 6. September 2012, 09:39
  */
 
-#include "CPIDRegler.h"
+#include "../include/CPIDRegler.h"
 
 CPIDRegler::CPIDRegler(CSensor * pSesnor, uint8_t iSensorChannle, CActor * pActor, uint8_t iActorChannle)
 {
@@ -86,18 +86,22 @@ void CPIDRegler::run()
 {
     try
     {
+        float iSensorValue = 0;
+        
         while (!m_bStop)
         {
             m_iTimeNow = getTime();
             
-            m_e = m_soll - m_pSensor(m_iSensorChannle);
+            m_pSensor->getValue(iSensorValue, m_iSensorChannle);
+            
+            m_e = m_soll - iSensorValue;
             m_esum = m_esum + m_e;
-            m_pActor(m_Kp * m_e + m_Ki * m_iTime * m_esum + m_Kd * (m_e - m_ealt) / m_iTime, m_iActorChannle);
+            m_pActor->setValue(m_Kp * m_e + m_Ki * m_iTime * m_esum + m_Kd * (m_e - m_ealt) / m_iTime, m_iActorChannle);
             m_ealt = m_e;
             
             m_iTimeNow -= getTime();
             
-            delay_ms(m_iTime - m_iTimeNow);
+            boost::this_thread::sleep(boost::posix_time::milliseconds(m_iTime - m_iTimeNow));
         }
     }
     catch (boost::thread_interrupted&)

@@ -29,19 +29,19 @@ int main(int argc, char** argv)
         //Create a i2c bus object to handel communiation for sensors and actors
         CI2C * pI2C = new CI2C("/dev/i2c-3");
         
-        //Creare a BMA180 sensor object to handel BMA180 Sensor 
+        //Creare a BMA180 sensor object to handel BMA180 sensor 
         CBMA180 * pBMA180 = new CBMA180(pI2C, 0x41);
         
-        //Creare a ITG3200 sensor object to handel ITG3200 Sensor
+        //Creare a ITG3200 sensor object to handel ITG3200 sensor
         CITG3200 * pITG3200 = new CITG3200(pI2C, 0x11);
         
         //Creare a PWMDriver object to handel PWMDriver
         CPWMDriver * pPWMDriver = new CPWMDriver(pI2C, 0xA0);
         
-        //Creare a RPMeter sensor object to handel RPMeter Sensor (Left motor)
+        //Creare a RPMeter sensor object to handel RPMeter sensor (Left motor)
         CRPMeter * pRPMeterL = new CRPMeter(pI2C, 0x20);
         
-        //Creare a RPMeter sensor object to handel RPMeter Sensor (Right motor)
+        //Creare a RPMeter sensor object to handel RPMeter sensor (Right motor)
         CRPMeter * pRPMeterR = new CRPMeter(pI2C, 0x22);
         
         //Creare a PIDRegler object to handel PID Regler(Left motor)
@@ -51,12 +51,12 @@ int main(int argc, char** argv)
         CPIDRegler * pPIDReglerR = new CPIDRegler(pRPMeterR, 0, pPWMDriver, 1);
         
         //Start all objekts(Every object has a thread, you can activate the thread to receive or update the data or you can to it manually)
-        pBMA180->run();
-        pITG3200->run();
-        pRPMeterL->run();
-        pRPMeterR->run();
-        pPIDReglerL->run();
-        pPIDReglerR->run();
+        pBMA180->start();
+        pITG3200->start();
+        pRPMeterL->start();
+        pRPMeterR->start();
+        pPIDReglerL->start();
+        pPIDReglerR->start();
         
         while(true)
         {

@@ -17,7 +17,7 @@ class CMotor : CActor
         
         void stop();
         
-        virtual int8_t setValue(int16_t iValue, uint8_t iChannle);
+        virtual bool setValue(float iValue, uint8_t iChannle);
 
     private:
         CPWMDriver *                  m_pPWMDriver;

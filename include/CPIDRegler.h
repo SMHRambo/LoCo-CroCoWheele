@@ -17,7 +17,7 @@
 class CPIDRegler
 {
     public:
-        CPIDRegler(CSensor * pSesnor, uint8_t iSensorChannle, CActor * pActor, uint8_t iActorChannle);
+        CPIDRegler(CSensor * pSensor, uint8_t iSensorChannle, CActor * pActor, uint8_t iActorChannle);
         virtual ~CPIDRegler();
         
         void setSoll(float soll);

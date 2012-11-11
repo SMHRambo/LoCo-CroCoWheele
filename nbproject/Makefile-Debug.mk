@@ -43,8 +43,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/src/CBMA180.o \
 	${OBJECTDIR}/src/CVector.o \
-	${OBJECTDIR}/src/CKalmanFilter.o \
 	${OBJECTDIR}/src/CLSM303DLH.o \
+	${OBJECTDIR}/src/CKalmanFilter.o \
 	${OBJECTDIR}/src/CITG3200.o \
 	${OBJECTDIR}/src/CI2C.o \
 	${OBJECTDIR}/src/CRPMeter.o \
@@ -115,15 +115,15 @@ ${OBJECTDIR}/src/CVector.o: src/CVector.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
 
-${OBJECTDIR}/src/CKalmanFilter.o: src/CKalmanFilter.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CKalmanFilter.o src/CKalmanFilter.cpp
-
 ${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
+
+${OBJECTDIR}/src/CKalmanFilter.o: src/CKalmanFilter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CKalmanFilter.o src/CKalmanFilter.cpp
 
 ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src

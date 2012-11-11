@@ -18,13 +18,13 @@ class CITG3200  : CSensor
         uint16_t getGyroYRaw();
         uint16_t getGyroZRaw();
 
-        double getGyroX();
-        double getGyroY();
-        double getGyroZ();
+        float getGyroX();
+        float getGyroY();
+        float getGyroZ();
 
-        double getGyroAlpha();
-        double getGyroBeta();
-        double getGyroGamma();
+        float getGyroAlpha();
+        float getGyroBeta();
+        float getGyroGamma();
 
         CVector getGyroVector();
 
@@ -32,13 +32,13 @@ class CITG3200  : CSensor
         uint16_t getGyroYRawPerI2C();
         uint16_t getGyroZRawPerI2C();
 
-        double getGyroXPerI2C();
-        double getGyroYPerI2C();
-        double getGyroZPerI2C();
+        float getGyroXPerI2C();
+        float getGyroYPerI2C();
+        float getGyroZPerI2C();
 
-        double getGyroAlphaPerI2C();
-        double getGyroBetaPerI2C();
-        double getGyroGammaPerI2C();
+        float getGyroAlphaPerI2C();
+        float getGyroBetaPerI2C();
+        float getGyroGammaPerI2C();
 
         CVector getGyroVectorPerI2C();
 
@@ -47,7 +47,7 @@ class CITG3200  : CSensor
         void kill();
         void run();
 
-        virtual int8_t getValue(int16_t &iValue, uint8_t iChannle);
+        virtual bool getValue(float &iValue, uint8_t iChannle);
         
     private:
         boost::recursive_mutex  m_ITG3200Mutex;

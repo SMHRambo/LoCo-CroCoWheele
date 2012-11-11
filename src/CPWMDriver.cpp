@@ -78,7 +78,7 @@ uint16_t CPWMDriver::getPeriod()
     return iPeriodTime;
 }
 
-int8_t CPWMDriver::setValue(int16_t iValue, uint8_t iChannle)
+bool CPWMDriver::setValue(float iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {

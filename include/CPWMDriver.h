@@ -6,7 +6,7 @@
 #include "CI2C.h"
 #include "CActor.h"
 
-class CPWMDriver : CActor
+class CPWMDriver : public CActor
 {
     public:
         CPWMDriver(CI2C * pI2C, uint8_t iAddress);
@@ -18,7 +18,7 @@ class CPWMDriver : CActor
         uint16_t getPWM(uint8_t iCHannle);
         uint16_t getPeriod();
         
-        virtual int8_t setValue(int16_t iValue, uint8_t iChannle);
+        virtual bool setValue(float iValue, uint8_t iChannle);
         
     private:
         CI2C *                  m_pI2C;

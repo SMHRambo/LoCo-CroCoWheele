@@ -7,7 +7,7 @@
 #include "CI2C.h"
 #include "CSensor.h"
 
-class CRPMeter  : CSensor
+class CRPMeter : public CSensor
 {
     public:
         CRPMeter(CI2C * pI2C, uint8_t iAddress);
@@ -18,7 +18,7 @@ class CRPMeter  : CSensor
         void kill();
         void run();
         
-        virtual int8_t getValue(int16_t &iValue, uint8_t iChannle);
+        virtual bool getValue(float &iValue, uint8_t iChannle);
         
     private:
         boost::recursive_mutex  m_RPMeterMutex;

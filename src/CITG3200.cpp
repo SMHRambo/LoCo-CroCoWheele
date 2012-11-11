@@ -51,9 +51,9 @@ uint16_t CITG3200::getGyroZRaw()
     return iGyroZ;
 }
 
-double CITG3200::getGyroX()
+float CITG3200::getGyroX()
 {
-    double iGyroX = 0;
+    float iGyroX = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -64,9 +64,9 @@ double CITG3200::getGyroX()
     return iGyroX;
 }
 
-double CITG3200::getGyroY()
+float CITG3200::getGyroY()
 {
-    double iGyroY = 0;
+    float iGyroY = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -77,9 +77,9 @@ double CITG3200::getGyroY()
     return iGyroY;
 }
 
-double CITG3200::getGyroZ()
+float CITG3200::getGyroZ()
 {
-    double iGyroZ = 0;
+    float iGyroZ = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -91,9 +91,9 @@ double CITG3200::getGyroZ()
 }
 
 
-double CITG3200::getGyroAlpha()
+float CITG3200::getGyroAlpha()
 {
-    double iAlpha = 0;
+    float iAlpha = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -104,9 +104,9 @@ double CITG3200::getGyroAlpha()
     return iAlpha;
 }
 
-double CITG3200::getGyroBeta()
+float CITG3200::getGyroBeta()
 {
-    double iBeta = 0;
+    float iBeta = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -117,9 +117,9 @@ double CITG3200::getGyroBeta()
     return iBeta;
 }
 
-double CITG3200::getGyroGamma()
+float CITG3200::getGyroGamma()
 {
-    double iGamma = 0;
+    float iGamma = 0;
     
     m_ITG3200Mutex.lock();
     
@@ -153,33 +153,33 @@ uint16_t CITG3200::getGyroZRawPerI2C()
 }
 
 
-double CITG3200::getGyroXPerI2C()
+float CITG3200::getGyroXPerI2C()
 {
 
 }
 
-double CITG3200::getGyroYPerI2C()
+float CITG3200::getGyroYPerI2C()
 {
 
 }
 
-double CITG3200::getGyroZPerI2C()
+float CITG3200::getGyroZPerI2C()
 {
 
 }
 
 
-double CITG3200::getGyroAlphaPerI2C()
+float CITG3200::getGyroAlphaPerI2C()
 {
 
 }
 
-double CITG3200::getGyroBetaPerI2C()
+float CITG3200::getGyroBetaPerI2C()
 {
 
 }
 
-double CITG3200::getGyroGammaPerI2C()
+float CITG3200::getGyroGammaPerI2C()
 {
 
 }
@@ -223,7 +223,7 @@ void CITG3200::run()
     }
 }
 
-int8_t CITG3200::getValue(int16_t &iValue, uint8_t iChannle)
+bool CITG3200::getValue(float &iValue, uint8_t iChannle)
 {
     switch(iChannle)
     {
