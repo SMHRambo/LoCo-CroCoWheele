@@ -1,6 +1,9 @@
 #include "../include/CBMA180.h"
 
-
+//Construktor
+//Parameter:
+//CI2C * pI2C an i2c bus object to communicate with the sensor
+//uint8_t iAddress the address of the sensor on the i2c bus
 CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
 {
     m_pI2C = pI2C;
@@ -13,6 +16,7 @@ CBMA180::~CBMA180()
 
 }
 
+//return the raw acceleration value of the x axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccXRaw()
 {
     uint16_t iAccX = 0;
@@ -26,6 +30,7 @@ uint16_t CBMA180::getAccXRaw()
     return iAccX;
 }
 
+//return the raw acceleration value of the y axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccYRaw()
 {
     uint16_t iAccY = 0;
@@ -39,6 +44,7 @@ uint16_t CBMA180::getAccYRaw()
     return iAccY;
 }
 
+//return the raw acceleration value of the z axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccZRaw()
 {
     uint16_t iAccZ = 0;
@@ -52,6 +58,7 @@ uint16_t CBMA180::getAccZRaw()
     return iAccZ;
 }
 
+//return the raw but signed acceleration value of the x axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccXSignedRaw()
 {
     uint16_t iAccX = 0;
@@ -65,6 +72,7 @@ int16_t CBMA180::getAccXSignedRaw()
     return iAccX;
 }
 
+//return the raw but signed acceleration value of the y axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccYSignedRaw()
 {
     uint16_t iAccY = 0;
@@ -78,6 +86,7 @@ int16_t CBMA180::getAccYSignedRaw()
     return iAccY;
 }
 
+//return the raw but signed acceleration value of the z axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccZSignedRaw()
 {
     uint16_t iAccZ = 0;
@@ -90,6 +99,7 @@ int16_t CBMA180::getAccZSignedRaw()
 
     return iAccZ;
 }
+
 
 float CBMA180::getAccX()
 {
