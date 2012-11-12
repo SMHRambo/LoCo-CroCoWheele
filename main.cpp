@@ -66,7 +66,7 @@ int main(int argc, char** argv)
             std::cout << pBMA180->getAccYRawPerI2C() << std::endl;
             usleep( 100000 );
             std::cout << pBMA180->getAccZRawPerI2C() << std::endl;
-            usleep( 100000 );
+            usleep( 100000 )
         }
 
         return 0;    
