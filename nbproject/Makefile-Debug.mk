@@ -65,7 +65,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/ust/lib -L/usr/local/lib -lboost_iostreams -lboost_regex -lboost_signals -lboost_system -lboost_thread
+LDLIBSOPTIONS=-L/usr/lib -L/usr/local/lib -lboost_iostreams -lboost_regex -lboost_signals -lboost_system -lboost_thread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}

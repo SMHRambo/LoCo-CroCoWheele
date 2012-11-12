@@ -84,7 +84,7 @@
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/ust/lib</pElem>
+            <pElem>/usr/lib</pElem>
             <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
