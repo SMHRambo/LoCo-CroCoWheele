@@ -30,10 +30,10 @@ int main(int argc, char** argv)
         CI2C * pI2C = new CI2C("/dev/i2c-3");
         
         //Creare a BMA180 sensor object to handel BMA180 sensor 
-        CBMA180 * pBMA180 = new CBMA180(pI2C, 0x41);
+        CBMA180 * pBMA180 = new CBMA180(pI2C, 0x40);
         
         //Creare a ITG3200 sensor object to handel ITG3200 sensor
-        CITG3200 * pITG3200 = new CITG3200(pI2C, 0x11);
+        CITG3200 * pITG3200 = new CITG3200(pI2C, 0x69);
         
         //Creare a PWMDriver object to handel PWMDriver
         CPWMDriver * pPWMDriver = new CPWMDriver(pI2C, 0xA0);
@@ -53,10 +53,10 @@ int main(int argc, char** argv)
         //Start all objekts(Every object has a thread, you can activate the thread to receive or update the data or you can to it manually)
         pBMA180->start();
         pITG3200->start();
-        pRPMeterL->start();
-        pRPMeterR->start();
-        pPIDReglerL->start();
-        pPIDReglerR->start();
+        //pRPMeterL->start();
+        //pRPMeterR->start();
+        //pPIDReglerL->start();
+        //pPIDReglerR->start();
         
         while(true)
         {
