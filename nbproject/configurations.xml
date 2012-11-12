@@ -78,17 +78,17 @@
       <compileType>
         <ccTool>
           <incDir>
+            <pElem>/usr/include</pElem>
             <pElem>/usr/local/include</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
+            <pElem>/ust/lib</pElem>
             <pElem>/usr/local/lib</pElem>
           </linkerAddLib>
           <linkerLibItems>
-            <linkerLibLibItem>boost_exception</linkerLibLibItem>
             <linkerLibLibItem>boost_iostreams</linkerLibLibItem>
-            <linkerLibLibItem>boost_locale</linkerLibLibItem>
             <linkerLibLibItem>boost_regex</linkerLibLibItem>
             <linkerLibLibItem>boost_signals</linkerLibLibItem>
             <linkerLibLibItem>boost_system</linkerLibLibItem>

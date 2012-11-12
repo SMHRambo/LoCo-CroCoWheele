@@ -148,8 +148,8 @@ class CBMA180 : public CSensor
          * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format zurück.
          * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
          * @return Gibt den X-Achsen.Beschleunigung im RAW Format zurück.
-         * @see getAccYRawI2C()
-         * @see getAccZRawI2C();
+         * @see getAccYRawPerI2C()
+         * @see getAccZRawPerI2C();
          */        
         uint16_t getAccXRawPerI2C();
 
@@ -157,8 +157,8 @@ class CBMA180 : public CSensor
          * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format zurück.
          * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
          * @return Gibt den Y-Achsen.Beschleunigung im RAW Format zurück.
-         * @see getAccXRawI2C()
-         * @see getAccZRawI2C();
+         * @see getAccXRawPerI2C()
+         * @see getAccZRawPerI2C();
          */
         uint16_t getAccYRawPerI2C();
 
@@ -166,8 +166,8 @@ class CBMA180 : public CSensor
          * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
          * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
          * @return Gibt den Z-Achsen.Beschleunigung im RAW Format zurück.
-         * @see getAccXRawI2C()
-         * @see getAccYRawI2C();
+         * @see getAccXRawPerI2C()
+         * @see getAccYRawPerI2C();
          */
         uint16_t getAccZRawPerI2C();
 
@@ -176,8 +176,8 @@ class CBMA180 : public CSensor
          * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
          * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
          * @return Gibt den Z-Achsen.Beschleunigung im RAW Format zurück.
-         * @see getAccXRawI2C()
-         * @see getAccYRawI2C();
+         * @see getAccXRawPerI2C()
+         * @see getAccYRawPerI2C();
          */
         int16_t getAccXSignedRawPerI2C();
         int16_t getAccYSignedRawPerI2C();

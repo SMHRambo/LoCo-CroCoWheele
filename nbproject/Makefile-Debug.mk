@@ -65,7 +65,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/usr/local/lib -lboost_exception -lboost_iostreams -lboost_locale -lboost_regex -lboost_signals -lboost_system -lboost_thread
+LDLIBSOPTIONS=-L/ust/lib -L/usr/local/lib -lboost_iostreams -lboost_regex -lboost_signals -lboost_system -lboost_thread
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -78,72 +78,72 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/loco-crocowheele: ${OBJECTFILES}
 ${OBJECTDIR}/src/CSensor.o: src/CSensor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CSensor.o src/CSensor.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CSensor.o src/CSensor.cpp
 
 ${OBJECTDIR}/src/CMotor.o: src/CMotor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CMotor.o src/CMotor.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CMotor.o src/CMotor.cpp
 
 ${OBJECTDIR}/src/CPWMDriver.o: src/CPWMDriver.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWMDriver.o src/CPWMDriver.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWMDriver.o src/CPWMDriver.cpp
 
 ${OBJECTDIR}/src/CActor.o: src/CActor.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CActor.o src/CActor.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CActor.o src/CActor.cpp
 
 ${OBJECTDIR}/src/CPIDRegler.o: src/CPIDRegler.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPIDRegler.o src/CPIDRegler.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPIDRegler.o src/CPIDRegler.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/src/CBMA180.o: src/CBMA180.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CBMA180.o src/CBMA180.cpp
 
 ${OBJECTDIR}/src/CVector.o: src/CVector.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CVector.o src/CVector.cpp
 
 ${OBJECTDIR}/src/CLSM303DLH.o: src/CLSM303DLH.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CLSM303DLH.o src/CLSM303DLH.cpp
 
 ${OBJECTDIR}/src/CKalmanFilter.o: src/CKalmanFilter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CKalmanFilter.o src/CKalmanFilter.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CKalmanFilter.o src/CKalmanFilter.cpp
 
 ${OBJECTDIR}/src/CITG3200.o: src/CITG3200.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CITG3200.o src/CITG3200.cpp
 
 ${OBJECTDIR}/src/CI2C.o: src/CI2C.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CI2C.o src/CI2C.cpp
 
 ${OBJECTDIR}/src/CRPMeter.o: src/CRPMeter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CRPMeter.o src/CRPMeter.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CRPMeter.o src/CRPMeter.cpp
 
 ${OBJECTDIR}/src/CPWM.o: src/CPWM.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -g -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWM.o src/CPWM.cpp
+	$(COMPILE.cc) -g -I/usr/include -I/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/CPWM.o src/CPWM.cpp
 
 # Subprojects
 .build-subprojects:
