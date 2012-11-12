@@ -1,0 +1,65 @@
+\hypertarget{class_c_actor}{\section{\-C\-Actor \-Klassenreferenz}
+\label{class_c_actor}\index{\-C\-Actor@{\-C\-Actor}}
+}
+\-Klassendiagramm für \-C\-Actor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_actor}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche \-Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_c_actor_a22436a9e69474d47f31ac81fa192ba4b}{\-C\-Actor} ()
+\item 
+virtual \hyperlink{class_c_actor_a1ff541702c90c8c5ec57aff57568ef04}{$\sim$\-C\-Actor} ()
+\item 
+virtual bool \hyperlink{class_c_actor_a8a04a31e44aaa861d97bdbeb7ae1a570}{set\-Value} (float i\-Value, uint8\-\_\-t i\-Channle)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Beschreibung der \-Konstruktoren und \-Destruktoren}
+\hypertarget{class_c_actor_a22436a9e69474d47f31ac81fa192ba4b}{\index{\-C\-Actor@{\-C\-Actor}!\-C\-Actor@{\-C\-Actor}}
+\index{\-C\-Actor@{\-C\-Actor}!CActor@{\-C\-Actor}}
+\subsubsection[{\-C\-Actor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-C\-Actor\-::\-C\-Actor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_c_actor_a22436a9e69474d47f31ac81fa192ba4b}
+\-Erzeugt ein \-Objekt der \-Klasse \hyperlink{class_c_actor}{\-C\-Actor}. \hypertarget{class_c_actor_a1ff541702c90c8c5ec57aff57568ef04}{\index{\-C\-Actor@{\-C\-Actor}!$\sim$\-C\-Actor@{$\sim$\-C\-Actor}}
+\index{$\sim$\-C\-Actor@{$\sim$\-C\-Actor}!CActor@{\-C\-Actor}}
+\subsubsection[{$\sim$\-C\-Actor}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf \-C\-Actor\-::$\sim$\-C\-Actor} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_c_actor_a1ff541702c90c8c5ec57aff57568ef04}
+\-Löscht ein \-Objekt der \-Klasse \hyperlink{class_c_actor}{\-C\-Actor}. 
+
+\subsection{\-Dokumentation der \-Elementfunktionen}
+\hypertarget{class_c_actor_a8a04a31e44aaa861d97bdbeb7ae1a570}{\index{\-C\-Actor@{\-C\-Actor}!set\-Value@{set\-Value}}
+\index{set\-Value@{set\-Value}!CActor@{\-C\-Actor}}
+\subsubsection[{set\-Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-C\-Actor\-::set\-Value} (
+\begin{DoxyParamCaption}
+\item[{float}]{i\-Value, }
+\item[{uint8\-\_\-t}]{i\-Channle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}\label{class_c_actor_a8a04a31e44aaa861d97bdbeb7ae1a570}
+\-Gibt den \-Wert i\-Value an den \-Datenkanal i\-Channel weiter. 
+\begin{DoxyParams}[1]{\-Parameter}
+\mbox{\tt in}  & {\em i\-Value} & \-Wert der übergeben werden soll. \\
+\hline
+\mbox{\tt in}  & {\em i\-Channle} & \-Datenkanal an dem der \-Wert i\-Value übergeben werden soll. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Rückgabe}
+\-Gibt zurück ob der \-Wert i\-Value in den \-Datenkanal i\-Channle übergeben werden konnte, bzw. ob es den aufgerufenen \-Datenkanal gibt. 
+\end{DoxyReturn}
+
+
+\-Implementiert in \hyperlink{class_c_p_w_m_driver_a91a128c891a11d64ba7a8d1486e77fab}{\-C\-P\-W\-M\-Driver} und \hyperlink{class_c_motor_a83fa60cbf910c7386fb45db8ea875de1}{\-C\-Motor}.
+
+
+
+\-Die \-Dokumentation für diese \-Klasse wurde erzeugt aufgrund der \-Datei\-:\begin{DoxyCompactItemize}
+\item 
+include/\-C\-Actor.\-h\end{DoxyCompactItemize}

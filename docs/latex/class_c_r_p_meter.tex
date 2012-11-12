@@ -1,0 +1,59 @@
+\hypertarget{class_c_r_p_meter}{\section{\-C\-R\-P\-Meter \-Klassenreferenz}
+\label{class_c_r_p_meter}\index{\-C\-R\-P\-Meter@{\-C\-R\-P\-Meter}}
+}
+\-Klassendiagramm für \-C\-R\-P\-Meter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_r_p_meter}
+\end{center}
+\end{figure}
+\subsection*{Öffentliche \-Methoden}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_c_r_p_meter_ab0ce8f26cfa08edfe5f8b0810591eaca}{{\bfseries \-C\-R\-P\-Meter} (\hyperlink{class_c_i2_c}{\-C\-I2\-C} $\ast$p\-I2\-C, uint8\-\_\-t i\-Address)}\label{class_c_r_p_meter_ab0ce8f26cfa08edfe5f8b0810591eaca}
+
+\item 
+\hypertarget{class_c_r_p_meter_ae777168160c21ca61fcc2070bd691ef6}{void {\bfseries start} ()}\label{class_c_r_p_meter_ae777168160c21ca61fcc2070bd691ef6}
+
+\item 
+\hypertarget{class_c_r_p_meter_a2af8f07faa15457ab5440eed411065e5}{void {\bfseries stop} ()}\label{class_c_r_p_meter_a2af8f07faa15457ab5440eed411065e5}
+
+\item 
+\hypertarget{class_c_r_p_meter_a866096ac582ba8d3a743644dcfb25839}{void {\bfseries kill} ()}\label{class_c_r_p_meter_a866096ac582ba8d3a743644dcfb25839}
+
+\item 
+\hypertarget{class_c_r_p_meter_a54f8a5a721ce32a3557383429af33308}{void {\bfseries run} ()}\label{class_c_r_p_meter_a54f8a5a721ce32a3557383429af33308}
+
+\item 
+virtual bool \hyperlink{class_c_r_p_meter_af0c4786702d4abda2f61b0b0f9c968fa}{get\-Value} (float \&i\-Value, uint8\-\_\-t i\-Channle)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Dokumentation der \-Elementfunktionen}
+\hypertarget{class_c_r_p_meter_af0c4786702d4abda2f61b0b0f9c968fa}{\index{\-C\-R\-P\-Meter@{\-C\-R\-P\-Meter}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!CRPMeter@{\-C\-R\-P\-Meter}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool {\bf \-C\-R\-P\-Meter\-::get\-Value} (
+\begin{DoxyParamCaption}
+\item[{float \&}]{i\-Value, }
+\item[{uint8\-\_\-t}]{i\-Channle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}\label{class_c_r_p_meter_af0c4786702d4abda2f61b0b0f9c968fa}
+\-Gibt den \-Wert i\-Value von dem \-Datenkanal i\-Channel zurück. 
+\begin{DoxyParams}[1]{\-Parameter}
+\mbox{\tt out}  & {\em i\-Value} & \-Wert der übergeben wird. \\
+\hline
+\mbox{\tt in}  & {\em i\-Channle} & \-Datenkanal von dem der \-Wert i\-Value übergeben werden soll. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Rückgabe}
+\-Gibt zurück ob der \-Wert i\-Value von dem \-Datenkanal i\-Channle übergeben werden konnte, bzw. ob es den aufgerufenen \-Datenkanal gibt. 
+\end{DoxyReturn}
+
+
+\-Implementiert \hyperlink{class_c_sensor_a42b204fb320865a28b26478d079300d4}{\-C\-Sensor}.
+
+
+
+\-Die \-Dokumentation für diese \-Klasse wurde erzeugt aufgrund der \-Datei\-:\begin{DoxyCompactItemize}
+\item 
+include/\-C\-R\-P\-Meter.\-h\end{DoxyCompactItemize}

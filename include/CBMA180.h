@@ -11,120 +11,127 @@
 class CBMA180 : public CSensor
 {
     public:
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Erzeugt ein Objekt der Klasse CBMA180.
+         * Der Konstruktor erwartet als Paramter die i2c Addresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist.
+         * @param[in] pI2C Der i2c Bus über dem der Sensor angeschlössen ist. 
+         * @param[in] iAddress Die Adresse des Sensors auf dem i2c Bus.    
          */
         CBMA180(CI2C * pI2C, uint8_t iAddress);
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Löscht ein Objekt der Klasse CBMA180.
          */
         virtual ~CBMA180();
 
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die Membervariable m_iAccX zurück.  
+         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den X-Achsen.Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
+         * @see getAccYRaw()
+         * @see getAccZRaw();
          */        
         uint16_t getAccXRaw();
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
-         */
+        /** Gibt die Membervariable m_iAccY zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Y-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccZRaw();
+         */  
         uint16_t getAccYRaw();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
-         */        
+        /** Gibt die Membervariable m_iAccZ zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Z-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccYRaw();
+         */       
         uint16_t getAccZRaw();
 
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
-         */        
+        /** Gibt die Membervariable m_iAccX mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den X-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
+         * @see getAccYRaw()
+         * @see getAccZRaw();
+         */          
         int16_t getAccXSignedRaw();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die Membervariable m_iAccY mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Y-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccZRaw();
          */        
         int16_t getAccYSignedRaw();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
-         */        
+        /** Gibt die Membervariable m_iAccZ mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Z-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccYRaw();
+         */            
         int16_t getAccZSignedRaw();
         
 
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die Membervariable m_iAccX als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den X-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * @see getAccYRaw()
+         * @see getAccZRaw();
          */        
         float getAccX();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die Membervariable m_iAccY als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Y-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccZRaw();
          */        
         float getAccY();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die Membervariable m_iAccZ als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Z-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * @see getAccXRaw()
+         * @see getAccYRaw();
          */        
         float getAccZ();
 
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt den Winkel Alpha zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu X-Achse zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Der Winkel des Beschleunigungsvektors zur X-Achse.  
+         * @see getAccBeta()
+         * @see getAccGamma();  
          */        
         float getAccAlpha();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
-         */        
+        /** Gibt den Winkel Beta zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Y-Achse zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Der Winkel des Beschleunigungsvektors zur Y-Achse.  
+         * @see getAccAlpha()
+         * @see getAccGamma();  
+         */       
         float getAccBeta();
         
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt den Winkel Gamma zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Z-Achse zurück.
+         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Der Winkel des Beschleunigungsvektors zur Z-Achse.  
+         * @see getAccAlpha()
+         * @see getAccBeta();  
          */        
         float getAccGamma();
 

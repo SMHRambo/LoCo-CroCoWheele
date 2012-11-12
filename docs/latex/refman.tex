@@ -1,0 +1,87 @@
+\documentclass[a4paper]{book}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\hfuzz=15pt
+\setlength{\emergencystretch}{15pt}
+\hbadness=750
+\tolerance=750
+\begin{document}
+\hypersetup{pageanchor=false,citecolor=blue}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large \-Lo\-Co-\/\-Cro\-Co\-Wheele }\\
+\vspace*{1cm}
+{\large \-Erzeugt von Doxygen 1.7.6.1}\\
+\vspace*{0.5cm}
+{\small Mon Nov 12 2012 08:48:08}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true,citecolor=blue}
+\chapter{\-Klassen-\/\-Verzeichnis}
+\input{hierarchy}
+\chapter{\-Klassen-\/\-Verzeichnis}
+\input{annotated}
+\chapter{\-Klassen-\/\-Dokumentation}
+\input{class_c_actor}
+\input{class_c_b_m_a180}
+\input{class_c_i2_c}
+\input{class_c_i_t_g3200}
+\input{class_c_kalman_filter}
+\input{class_c_logger}
+\input{class_c_l_s_m303_d_l_h}
+\input{class_c_motor}
+\input{class_c_p_i_d_regler}
+\input{class_c_p_w_m}
+\input{class_c_p_w_m_driver}
+\input{class_c_r_p_meter}
+\input{class_c_sensor}
+\input{class_c_server}
+\input{class_c_vector}
+\printindex
+\end{document}

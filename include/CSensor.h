@@ -16,7 +16,7 @@ public:
      */
     CSensor();
     
-    /** Löscht ein Objekt der Klasse CActor  
+    /** Löscht ein Objekt der Klasse CActor.  
      */
     virtual ~CSensor();
     
