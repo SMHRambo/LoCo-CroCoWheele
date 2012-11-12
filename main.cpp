@@ -51,8 +51,8 @@ int main(int argc, char** argv)
         CPIDRegler * pPIDReglerR = new CPIDRegler(pRPMeterR, 0, pPWMDriver, 1);
         
         //Start all objekts(Every object has a thread, you can activate the thread to receive and update the data or you can to it manually)
-        pBMA180->start();
-        pITG3200->start();
+        //pBMA180->start();
+        //pITG3200->start();
         //pRPMeterL->start();
         //pRPMeterR->start();
         //pPIDReglerL->start();
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
         
         while(true)
         {
-            std::cout << pBMA180->getAccX() << std::endl;
+            std::cout << pBMA180->getAccXRawPerI2C() << std::endl;
         }
 
         return 0;    
