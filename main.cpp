@@ -30,7 +30,7 @@ int main(int argc, char** argv)
         CI2C * pI2C = new CI2C("/dev/i2c-3");
         
         //Creare a BMA180 sensor object to handel BMA180 sensor 
-        CBMA180 * pBMA180 = new CBMA180(pI2C, 0x40);
+        CBMA180 * pBMA180 = new CBMA180(pI2C, 0x41);
         
         //Creare a ITG3200 sensor object to handel ITG3200 sensor
         CITG3200 * pITG3200 = new CITG3200(pI2C, 0x69);
