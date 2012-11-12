@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <unistd.h>
 
 //Add class libs for i2c Bus, BMA180 Sensor, ITG3200 Sensor, PWMDriver, RPMeter Sensor and PIDRegler
 #include "include/CI2C.h"
@@ -61,6 +62,11 @@ int main(int argc, char** argv)
         while(true)
         {
             std::cout << pBMA180->getAccXRawPerI2C() << std::endl;
+            usleep( 100000 );
+            std::cout << pBMA180->getAccYRawPerI2C() << std::endl;
+            usleep( 100000 );
+            std::cout << pBMA180->getAccZRawPerI2C() << std::endl;
+            usleep( 100000 );
         }
 
         return 0;    
