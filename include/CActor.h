@@ -12,8 +12,19 @@
 
 class CActor {
 public:
+    /** Erzeugt ein Objekt der Klasse CActor.
+     */
     CActor();
+    
+    /** Löscht ein Objekt der Klasse CActor.
+     */
     virtual ~CActor();
+    
+    /** Gibt den Wert iValue an den Datenkanal iChannel weiter.  
+     *  @param[in] iValue Wert der übergeben werden soll. 
+     *  @param[in] iChannle Datenkanal an dem der Wert iValue übergeben werden soll.  
+     *  @return Gibt zurück ob der Wert iValue in den Datenkanal iChannle übergeben werden konnte, bzw. ob es den aufgerufenen Datenkanal gibt.  
+     */
     virtual bool setValue(float iValue, uint8_t iChannle) = 0;
 private:
 

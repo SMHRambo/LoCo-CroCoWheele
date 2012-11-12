@@ -11,30 +11,155 @@
 class CBMA180 : public CSensor
 {
     public:
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */
         CBMA180(CI2C * pI2C, uint8_t iAddress);
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */
         virtual ~CBMA180();
 
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         uint16_t getAccXRaw();
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */
         uint16_t getAccYRaw();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         uint16_t getAccZRaw();
 
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         int16_t getAccXSignedRaw();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         int16_t getAccYSignedRaw();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         int16_t getAccZSignedRaw();
         
-        
+
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccX();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccY();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccZ();
 
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccAlpha();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccBeta();
+        
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         float getAccGamma();
 
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         CVector getVector();
 
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */        
         uint16_t getAccXRawPerI2C();
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */
         uint16_t getAccYRawPerI2C();
+
+        /** Addiert zwei ganze Zahlen.  
+         *  @param[in] a Die erste Zahl. 
+         *  @param[in] b Die zweite Zahl.  
+         *  @return Die Summe der beiden Zahlen a und b.  
+         *  @see Addiere(double,double)  
+         */
         uint16_t getAccZRawPerI2C();
 
         int16_t getAccXSignedRawPerI2C();
