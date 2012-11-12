@@ -60,7 +60,7 @@ int main(int argc, char** argv)
         
         while(true)
         {
-            
+            std::cout << pBMA180->getAccX() << std::endl;
         }
 
         return 0;    
