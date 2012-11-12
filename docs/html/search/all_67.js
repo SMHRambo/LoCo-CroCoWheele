@@ -7,6 +7,7 @@ var searchData=
   ['getaccxraw',['getAccXRaw',['../class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf',1,'CBMA180']]],
   ['getaccxrawperi2c',['getAccXRawPerI2C',['../class_c_b_m_a180.html#a989e2bdc2ac1fc5e228d469c7ed99187',1,'CBMA180']]],
   ['getaccxsignedraw',['getAccXSignedRaw',['../class_c_b_m_a180.html#aafcebbbc6fa319c83467ea2918360802',1,'CBMA180']]],
+  ['getaccxsignedrawperi2c',['getAccXSignedRawPerI2C',['../class_c_b_m_a180.html#aca9a02a8a24b408f1a27de0f6303491f',1,'CBMA180']]],
   ['getaccy',['getAccY',['../class_c_b_m_a180.html#a15562c533c3e3ecf09ee6434ad9ba349',1,'CBMA180']]],
   ['getaccyraw',['getAccYRaw',['../class_c_b_m_a180.html#af21a35191db52dee7c271d44da42bd2f',1,'CBMA180']]],
   ['getaccyrawperi2c',['getAccYRawPerI2C',['../class_c_b_m_a180.html#a2b37888a1df1fd1d0c17c95bb6c7e15a',1,'CBMA180']]],

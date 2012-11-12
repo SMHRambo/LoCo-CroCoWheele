@@ -12,8 +12,8 @@ class CBMA180 : public CSensor
 {
     public:
         /** Erzeugt ein Objekt der Klasse CBMA180.
-         * Der Konstruktor erwartet als Paramter die i2c Addresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist.
-         * @param[in] pI2C Der i2c Bus über dem der Sensor angeschlössen ist. 
+         * Der Konstruktor erwartet als Parameter die i2c Adresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist.
+         * @param[in] pI2C Der i2c Bus über dem der Sensor angeschlossen ist. 
          * @param[in] iAddress Die Adresse des Sensors auf dem i2c Bus.    
          */
         CBMA180(CI2C * pI2C, uint8_t iAddress);
@@ -24,8 +24,8 @@ class CBMA180 : public CSensor
 
         
         /** Gibt die Membervariable m_iAccX zurück.  
-         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den X-Achsen.Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
          * @see getAccYRaw()
          * @see getAccZRaw();
@@ -33,8 +33,8 @@ class CBMA180 : public CSensor
         uint16_t getAccXRaw();
 
         /** Gibt die Membervariable m_iAccY zurück.  
-         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den Y-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccZRaw();
@@ -42,8 +42,8 @@ class CBMA180 : public CSensor
         uint16_t getAccYRaw();
         
         /** Gibt die Membervariable m_iAccZ zurück.  
-         * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den Z-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccYRaw();
@@ -52,8 +52,8 @@ class CBMA180 : public CSensor
 
         
         /** Gibt die Membervariable m_iAccX mit Vorzeichen zurück.  
-         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den X-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
          * @see getAccYRaw()
          * @see getAccZRaw();
@@ -61,8 +61,8 @@ class CBMA180 : public CSensor
         int16_t getAccXSignedRaw();
         
         /** Gibt die Membervariable m_iAccY mit Vorzeichen zurück.  
-         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den Y-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccZRaw();
@@ -70,8 +70,8 @@ class CBMA180 : public CSensor
         int16_t getAccYSignedRaw();
         
         /** Gibt die Membervariable m_iAccZ mit Vorzeichen zurück.  
-         * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Gibt den Z-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccYRaw();
@@ -81,18 +81,18 @@ class CBMA180 : public CSensor
 
 
         /** Gibt die Membervariable m_iAccX als float in der richtigen Sklaierung zurück.  
-         * Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
-         * @return Gibt den X-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den X-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
          * @see getAccYRaw()
          * @see getAccZRaw();
          */        
         float getAccX();
         
         /** Gibt die Membervariable m_iAccY als float in der richtigen Sklaierung zurück.  
-         * Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
-         * @return Gibt den Y-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Y-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccZRaw();
          */        
@@ -100,8 +100,8 @@ class CBMA180 : public CSensor
         
         /** Gibt die Membervariable m_iAccZ als float in der richtigen Sklaierung zurück.  
          * Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors als float in der richtigen Sklaierung zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
-         * @return Gibt den Z-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Gibt den Z-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde.
          * @see getAccXRaw()
          * @see getAccYRaw();
          */        
@@ -109,8 +109,8 @@ class CBMA180 : public CSensor
 
         
         /** Gibt den Winkel Alpha zurück.  
-         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu X-Achse zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur X-Achse zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Der Winkel des Beschleunigungsvektors zur X-Achse.  
          * @see getAccBeta()
          * @see getAccGamma();  
@@ -118,8 +118,8 @@ class CBMA180 : public CSensor
         float getAccAlpha();
         
         /** Gibt den Winkel Beta zurück.  
-         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Y-Achse zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Y-Achse zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Der Winkel des Beschleunigungsvektors zur Y-Achse.  
          * @see getAccAlpha()
          * @see getAccGamma();  
@@ -127,8 +127,8 @@ class CBMA180 : public CSensor
         float getAccBeta();
         
         /** Gibt den Winkel Gamma zurück.  
-         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Z-Achse zurück.
-         * Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Z-Achse zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
          * @return Der Winkel des Beschleunigungsvektors zur Z-Achse.  
          * @see getAccAlpha()
          * @see getAccBeta();  
@@ -136,39 +136,49 @@ class CBMA180 : public CSensor
         float getAccGamma();
 
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt einen Objekt des Typs CVector zurück.  
+         * Diese Funktion gibt einen Vektor zurück der alle Beschleunigungswerte des Sensors enthält zurück.
+         * Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert.
+         * @return Der Beschleunigungsvektor des Sensors.
          */        
         CVector getVector();
 
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die die X-Achsen Beschleunigung des Sensors zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den X-Achsen.Beschleunigung im RAW Format zurück.
+         * @see getAccYRawI2C()
+         * @see getAccZRawI2C();
          */        
         uint16_t getAccXRawPerI2C();
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die die Y-Achsen Beschleunigung des Sensors zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Y-Achsen.Beschleunigung im RAW Format zurück.
+         * @see getAccXRawI2C()
+         * @see getAccZRawI2C();
          */
         uint16_t getAccYRawPerI2C();
 
-        /** Addiert zwei ganze Zahlen.  
-         *  @param[in] a Die erste Zahl. 
-         *  @param[in] b Die zweite Zahl.  
-         *  @return Die Summe der beiden Zahlen a und b.  
-         *  @see Addiere(double,double)  
+        /** Gibt die die Z-Achsen Beschleunigung des Sensors zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Z-Achsen.Beschleunigung im RAW Format zurück.
+         * @see getAccXRawI2C()
+         * @see getAccYRawI2C();
          */
         uint16_t getAccZRawPerI2C();
 
+        
+        /** Gibt die die Z-Achsen Beschleunigung des Sensors zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Z-Achsen.Beschleunigung im RAW Format zurück.
+         * @see getAccXRawI2C()
+         * @see getAccYRawI2C();
+         */
         int16_t getAccXSignedRawPerI2C();
         int16_t getAccYSignedRawPerI2C();
         int16_t getAccZSignedRawPerI2C();        

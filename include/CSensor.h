@@ -21,7 +21,7 @@ public:
     virtual ~CSensor();
     
     /** Gibt den Wert iValue von dem Datenkanal iChannel zurück.  
-     *  @param[out] iValue Wert der übergeben wird. 
+     *  @param[out] iValue Wert der zurückgegeben wird. 
      *  @param[in] iChannle Datenkanal von dem der Wert iValue übergeben werden soll.  
      *  @return Gibt zurück ob der Wert iValue von dem Datenkanal iChannle übergeben werden konnte, bzw. ob es den aufgerufenen Datenkanal gibt.  
      */

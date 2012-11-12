@@ -133,8 +133,7 @@ Klassendiagramm für CBMA180:</div>
 <tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_b_m_a180.html#a989e2bdc2ac1fc5e228d469c7ed99187">getAccXRawPerI2C</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_b_m_a180.html#a2b37888a1df1fd1d0c17c95bb6c7e15a">getAccYRawPerI2C</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_b_m_a180.html#accd1c61c0323e5acbd47cd1b1176084f">getAccZRawPerI2C</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca9a02a8a24b408f1a27de0f6303491f"></a><!-- doxytag: member="CBMA180::getAccXSignedRawPerI2C" ref="aca9a02a8a24b408f1a27de0f6303491f" args="()" -->
-int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>getAccXSignedRawPerI2C</b> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_b_m_a180.html#aca9a02a8a24b408f1a27de0f6303491f">getAccXSignedRawPerI2C</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76d299e0ede75e23c7c27b15391ffc2a"></a><!-- doxytag: member="CBMA180::getAccYSignedRawPerI2C" ref="a76d299e0ede75e23c7c27b15391ffc2a" args="()" -->
 int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>getAccYSignedRawPerI2C</b> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a70079e27326d0123a0b79ae2c2e1eb65"></a><!-- doxytag: member="CBMA180::getAccZSignedRawPerI2C" ref="a70079e27326d0123a0b79ae2c2e1eb65" args="()" -->
@@ -188,10 +187,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Erzeugt ein Objekt der Klasse <a class="el" href="class_c_b_m_a180.html">CBMA180</a>. Der Konstruktor erwartet als Paramter die i2c Addresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist. </p>
+<p>Erzeugt ein Objekt der Klasse <a class="el" href="class_c_b_m_a180.html">CBMA180</a>. Der Konstruktor erwartet als Parameter die i2c Adresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist. </p>
 <dl class="params"><dt><b>Parameter:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">pI2C</td><td>Der i2c Bus über dem der Sensor angeschlössen ist. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pI2C</td><td>Der i2c Bus über dem der Sensor angeschlossen ist. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">iAddress</td><td>Die Adresse des Sensors auf dem i2c Bus. </td></tr>
   </table>
   </dd>
@@ -230,7 +229,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt den Winkel Alpha zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu X-Achse zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt den Winkel Alpha zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur X-Achse zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Der Winkel des Beschleunigungsvektors zur X-Achse. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#a1eb83ff966920cba25c3506f90cc36f1">getAccBeta()</a> </dd>
 <dd>
@@ -251,7 +250,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt den Winkel Beta zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Y-Achse zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt den Winkel Beta zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Y-Achse zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Der Winkel des Beschleunigungsvektors zur Y-Achse. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#a1479e687581a037339e5db0a26183069">getAccAlpha()</a> </dd>
 <dd>
@@ -272,7 +271,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt den Winkel Gamma zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in relation zu Z-Achse zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt den Winkel Gamma zurück. Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Z-Achse zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Der Winkel des Beschleunigungsvektors zur Z-Achse. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#a1479e687581a037339e5db0a26183069">getAccAlpha()</a> </dd>
 <dd>
@@ -293,8 +292,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccX als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den X-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
+<p>Gibt die Membervariable m_iAccX als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den X-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af21a35191db52dee7c271d44da42bd2f">getAccYRaw()</a> </dd>
 <dd>
 <a class="el" href="class_c_b_m_a180.html#a5f4f8579e3eb267ad3b1ac828a99ece8">getAccZRaw()</a>; </dd></dl>
@@ -314,7 +313,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccX zurück. Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccX zurück. Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den X-Achsen.Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af21a35191db52dee7c271d44da42bd2f">getAccYRaw()</a> </dd>
 <dd>
@@ -335,16 +334,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Addiert zwei ganze Zahlen. </p>
-<dl class="params"><dt><b>Parameter:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Die erste Zahl. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Die zweite Zahl. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Die Summe der beiden Zahlen a und b. </dd></dl>
-<dl class="see"><dt><b>Siehe auch:</b></dt><dd>Addiere(double,double) </dd></dl>
+<p>Gibt die die X-Achsen Beschleunigung des Sensors zurück. Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format zurück. Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den X-Achsen.Beschleunigung im RAW Format zurück. </dd></dl>
+<dl class="see"><dt><b>Siehe auch:</b></dt><dd>getAccYRawI2C() </dd>
+<dd>
+getAccZRawI2C(); </dd></dl>
 
 </div>
 </div>
@@ -361,11 +355,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccX mit Vorzeichen zurück. Diese Funktion gibt den Beschleungungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccX mit Vorzeichen zurück. Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den X-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af21a35191db52dee7c271d44da42bd2f">getAccYRaw()</a> </dd>
 <dd>
 <a class="el" href="class_c_b_m_a180.html#a5f4f8579e3eb267ad3b1ac828a99ece8">getAccZRaw()</a>; </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aca9a02a8a24b408f1a27de0f6303491f"></a><!-- doxytag: member="CBMA180::getAccXSignedRawPerI2C" ref="aca9a02a8a24b408f1a27de0f6303491f" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t <a class="el" href="class_c_b_m_a180.html#aca9a02a8a24b408f1a27de0f6303491f">CBMA180::getAccXSignedRawPerI2C</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gibt die die Z-Achsen Beschleunigung des Sensors zurück. Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück. Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen.Beschleunigung im RAW Format zurück. </dd></dl>
+<dl class="see"><dt><b>Siehe auch:</b></dt><dd>getAccXRawI2C() </dd>
+<dd>
+getAccYRawI2C(); </dd></dl>
 
 </div>
 </div>
@@ -382,8 +397,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccY als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Y-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
+<p>Gibt die Membervariable m_iAccY als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Y-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
 <a class="el" href="class_c_b_m_a180.html#a5f4f8579e3eb267ad3b1ac828a99ece8">getAccZRaw()</a>; </dd></dl>
@@ -403,7 +418,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccY zurück. Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccY zurück. Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Y-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
@@ -424,16 +439,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Addiert zwei ganze Zahlen. </p>
-<dl class="params"><dt><b>Parameter:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Die erste Zahl. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Die zweite Zahl. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Die Summe der beiden Zahlen a und b. </dd></dl>
-<dl class="see"><dt><b>Siehe auch:</b></dt><dd>Addiere(double,double) </dd></dl>
+<p>Gibt die die Y-Achsen Beschleunigung des Sensors zurück. Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format zurück. Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Y-Achsen.Beschleunigung im RAW Format zurück. </dd></dl>
+<dl class="see"><dt><b>Siehe auch:</b></dt><dd>getAccXRawI2C() </dd>
+<dd>
+getAccZRawI2C(); </dd></dl>
 
 </div>
 </div>
@@ -450,7 +460,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccY mit Vorzeichen zurück. Diese Funktion gibt den Beschleungungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccY mit Vorzeichen zurück. Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Y-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
@@ -471,8 +481,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccZ als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen-Beschleunigung ifloat in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
+<p>Gibt die Membervariable m_iAccZ als float in der richtigen Sklaierung zurück. Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors als float in der richtigen Sklaierung zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen-Beschleunigung als float in der richtigen Sklaierung zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
 <a class="el" href="class_c_b_m_a180.html#af21a35191db52dee7c271d44da42bd2f">getAccYRaw()</a>; </dd></dl>
@@ -492,7 +502,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccZ zurück. Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccZ zurück. Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen-Beschleunigung im RAW Format zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
@@ -513,16 +523,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Addiert zwei ganze Zahlen. </p>
-<dl class="params"><dt><b>Parameter:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Die erste Zahl. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Die zweite Zahl. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Die Summe der beiden Zahlen a und b. </dd></dl>
-<dl class="see"><dt><b>Siehe auch:</b></dt><dd>Addiere(double,double) </dd></dl>
+<p>Gibt die die Z-Achsen Beschleunigung des Sensors zurück. Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück. Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen.Beschleunigung im RAW Format zurück. </dd></dl>
+<dl class="see"><dt><b>Siehe auch:</b></dt><dd>getAccXRawI2C() </dd>
+<dd>
+getAccYRawI2C(); </dd></dl>
 
 </div>
 </div>
@@ -539,7 +544,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Gibt die Membervariable m_iAccZ mit Vorzeichen zurück. Diese Funktion gibt den Beschleungungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<p>Gibt die Membervariable m_iAccZ mit Vorzeichen zurück. Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
 <dl class="return"><dt><b>Rückgabe:</b></dt><dd>Gibt den Z-Achsen-Beschleunigung im RAW Format mit Vorzeichen zurück die im Objekt gespeichert wurde. </dd></dl>
 <dl class="see"><dt><b>Siehe auch:</b></dt><dd><a class="el" href="class_c_b_m_a180.html#af45e95b6cef3448e758cf9c407b219cf">getAccXRaw()</a> </dd>
 <dd>
@@ -574,7 +579,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
 <p>Gibt den Wert iValue von dem Datenkanal iChannel zurück. </p>
 <dl class="params"><dt><b>Parameter:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">iValue</td><td>Wert der übergeben wird. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">iValue</td><td>Wert der zurückgegeben wird. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">iChannle</td><td>Datenkanal von dem der Wert iValue übergeben werden soll. </td></tr>
   </table>
   </dd>
@@ -598,16 +603,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Addiert zwei ganze Zahlen. </p>
-<dl class="params"><dt><b>Parameter:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>Die erste Zahl. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Die zweite Zahl. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Die Summe der beiden Zahlen a und b. </dd></dl>
-<dl class="see"><dt><b>Siehe auch:</b></dt><dd>Addiere(double,double) </dd></dl>
+<p>Gibt einen Objekt des Typs <a class="el" href="class_c_vector.html">CVector</a> zurück. Diese Funktion gibt einen Vektor zurück der alle Beschleunigungswerte des Sensors enthält zurück. Der Wert wird mit Hilfe des internen Threads oder durch aufrufen der Funktion run() aktualisiert. </p>
+<dl class="return"><dt><b>Rückgabe:</b></dt><dd>Der Beschleunigungsvektor des Sensors. </dd></dl>
 
 </div>
 </div>
@@ -634,7 +631,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
     <ul>
       <li class="navelem"><a class="el" href="class_c_b_m_a180.html">CBMA180</a>      </li>
 
-    <li class="footer">Erzeugt am Mon Nov 12 2012 08:48:07 für LoCo-CroCoWheele von
+    <li class="footer">Erzeugt am Mon Nov 12 2012 09:19:08 für LoCo-CroCoWheele von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

@@ -143,50 +143,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
 <a name="l00136"></a>00136         <span class="keywordtype">float</span> <a class="code" href="class_c_b_m_a180.html#aaef74ead21abf6fc87647ad5f63c5a03">getAccGamma</a>();
 <a name="l00137"></a>00137 
 <a name="l00138"></a>00138 
-<a name="l00145"></a>00145         <a class="code" href="class_c_vector.html">CVector</a> <a class="code" href="class_c_b_m_a180.html#ac9344e2d63aee2f5a1ad23156e2bbfc0">getVector</a>();
+<a name="l00144"></a>00144         <a class="code" href="class_c_vector.html">CVector</a> <a class="code" href="class_c_b_m_a180.html#ac9344e2d63aee2f5a1ad23156e2bbfc0">getVector</a>();
+<a name="l00145"></a>00145 
 <a name="l00146"></a>00146 
-<a name="l00147"></a>00147 
 <a name="l00154"></a>00154         uint16_t <a class="code" href="class_c_b_m_a180.html#a989e2bdc2ac1fc5e228d469c7ed99187">getAccXRawPerI2C</a>();
 <a name="l00155"></a>00155 
-<a name="l00162"></a>00162         uint16_t <a class="code" href="class_c_b_m_a180.html#a2b37888a1df1fd1d0c17c95bb6c7e15a">getAccYRawPerI2C</a>();
-<a name="l00163"></a>00163 
-<a name="l00170"></a>00170         uint16_t <a class="code" href="class_c_b_m_a180.html#accd1c61c0323e5acbd47cd1b1176084f">getAccZRawPerI2C</a>();
-<a name="l00171"></a>00171 
-<a name="l00172"></a>00172         int16_t getAccXSignedRawPerI2C();
-<a name="l00173"></a>00173         int16_t getAccYSignedRawPerI2C();
-<a name="l00174"></a>00174         int16_t getAccZSignedRawPerI2C();        
-<a name="l00175"></a>00175         
-<a name="l00176"></a>00176         <span class="keywordtype">float</span> getAccXPerI2C();
-<a name="l00177"></a>00177         <span class="keywordtype">float</span> getAccYPerI2C();
-<a name="l00178"></a>00178         <span class="keywordtype">float</span> getAccZPerI2C();
-<a name="l00179"></a>00179 
-<a name="l00180"></a>00180         <span class="keywordtype">float</span> getAccAlphaPerI2C();
-<a name="l00181"></a>00181         <span class="keywordtype">float</span> getAccBetaPerI2C();
-<a name="l00182"></a>00182         <span class="keywordtype">float</span> getAccGammaPerI2C();
-<a name="l00183"></a>00183 
-<a name="l00184"></a>00184         <a class="code" href="class_c_vector.html">CVector</a> getVectorPerI2C();
-<a name="l00185"></a>00185 
-<a name="l00186"></a>00186         <span class="keywordtype">void</span> start();
-<a name="l00187"></a>00187         <span class="keywordtype">void</span> stop();
-<a name="l00188"></a>00188         <span class="keywordtype">void</span> kill();
-<a name="l00189"></a>00189         <span class="keywordtype">void</span> run();
-<a name="l00190"></a>00190         
-<a name="l00191"></a>00191         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_b_m_a180.html#a3b4fca3c7e96f59da8f53c5a795cbbcb">getValue</a>(<span class="keywordtype">float</span> &amp;iValue, uint8_t iChannle);
-<a name="l00192"></a>00192 
-<a name="l00193"></a>00193     <span class="keyword">private</span>:
-<a name="l00194"></a>00194         boost::recursive_mutex  m_BMA180Mutex;
-<a name="l00195"></a>00195         boost::thread           m_BMA180Thread;
-<a name="l00196"></a>00196         <span class="keywordtype">bool</span>                    m_bStop;
-<a name="l00197"></a>00197         <a class="code" href="class_c_i2_c.html">CI2C</a> *                  m_pI2C;
-<a name="l00198"></a>00198         uint8_t                 m_iAddress;
-<a name="l00199"></a>00199         uint16_t                m_iAccX;
-<a name="l00200"></a>00200         uint16_t                m_iAccY;
-<a name="l00201"></a>00201         uint16_t                m_iAccZ;
-<a name="l00202"></a>00202         uint8_t                 m_iBits;
-<a name="l00203"></a>00203         uint8_t                 m_iRange;
-<a name="l00204"></a>00204 };
-<a name="l00205"></a>00205 
-<a name="l00206"></a>00206 <span class="preprocessor">#endif // BMA180_H</span>
+<a name="l00163"></a>00163         uint16_t <a class="code" href="class_c_b_m_a180.html#a2b37888a1df1fd1d0c17c95bb6c7e15a">getAccYRawPerI2C</a>();
+<a name="l00164"></a>00164 
+<a name="l00172"></a>00172         uint16_t <a class="code" href="class_c_b_m_a180.html#accd1c61c0323e5acbd47cd1b1176084f">getAccZRawPerI2C</a>();
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174         
+<a name="l00182"></a>00182         int16_t <a class="code" href="class_c_b_m_a180.html#aca9a02a8a24b408f1a27de0f6303491f">getAccXSignedRawPerI2C</a>();
+<a name="l00183"></a>00183         int16_t getAccYSignedRawPerI2C();
+<a name="l00184"></a>00184         int16_t getAccZSignedRawPerI2C();        
+<a name="l00185"></a>00185         
+<a name="l00186"></a>00186         <span class="keywordtype">float</span> getAccXPerI2C();
+<a name="l00187"></a>00187         <span class="keywordtype">float</span> getAccYPerI2C();
+<a name="l00188"></a>00188         <span class="keywordtype">float</span> getAccZPerI2C();
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190         <span class="keywordtype">float</span> getAccAlphaPerI2C();
+<a name="l00191"></a>00191         <span class="keywordtype">float</span> getAccBetaPerI2C();
+<a name="l00192"></a>00192         <span class="keywordtype">float</span> getAccGammaPerI2C();
+<a name="l00193"></a>00193 
+<a name="l00194"></a>00194         <a class="code" href="class_c_vector.html">CVector</a> getVectorPerI2C();
+<a name="l00195"></a>00195 
+<a name="l00196"></a>00196         <span class="keywordtype">void</span> start();
+<a name="l00197"></a>00197         <span class="keywordtype">void</span> stop();
+<a name="l00198"></a>00198         <span class="keywordtype">void</span> kill();
+<a name="l00199"></a>00199         <span class="keywordtype">void</span> run();
+<a name="l00200"></a>00200         
+<a name="l00201"></a>00201         <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_c_b_m_a180.html#a3b4fca3c7e96f59da8f53c5a795cbbcb">getValue</a>(<span class="keywordtype">float</span> &amp;iValue, uint8_t iChannle);
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203     <span class="keyword">private</span>:
+<a name="l00204"></a>00204         boost::recursive_mutex  m_BMA180Mutex;
+<a name="l00205"></a>00205         boost::thread           m_BMA180Thread;
+<a name="l00206"></a>00206         <span class="keywordtype">bool</span>                    m_bStop;
+<a name="l00207"></a>00207         <a class="code" href="class_c_i2_c.html">CI2C</a> *                  m_pI2C;
+<a name="l00208"></a>00208         uint8_t                 m_iAddress;
+<a name="l00209"></a>00209         uint16_t                m_iAccX;
+<a name="l00210"></a>00210         uint16_t                m_iAccY;
+<a name="l00211"></a>00211         uint16_t                m_iAccZ;
+<a name="l00212"></a>00212         uint8_t                 m_iBits;
+<a name="l00213"></a>00213         uint8_t                 m_iRange;
+<a name="l00214"></a>00214 };
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216 <span class="preprocessor">#endif // BMA180_H</span>
 </pre></div></div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -207,7 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
     <ul>
       <li class="navelem"><b>CBMA180.h</b>      </li>
 
-    <li class="footer">Erzeugt am Mon Nov 12 2012 08:48:07 für LoCo-CroCoWheele von
+    <li class="footer">Erzeugt am Mon Nov 12 2012 09:19:08 für LoCo-CroCoWheele von
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>
