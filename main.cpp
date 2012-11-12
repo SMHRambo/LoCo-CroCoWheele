@@ -50,7 +50,7 @@ int main(int argc, char** argv)
         //Creare a PIDRegler object to handel PID Regler(Right motor)
         CPIDRegler * pPIDReglerR = new CPIDRegler(pRPMeterR, 0, pPWMDriver, 1);
         
-        //Start all objekts(Every object has a thread, you can activate the thread to receive or update the data or you can to it manually)
+        //Start all objekts(Every object has a thread, you can activate the thread to receive and update the data or you can to it manually)
         pBMA180->start();
         pITG3200->start();
         //pRPMeterL->start();
