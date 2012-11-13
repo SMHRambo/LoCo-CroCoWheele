@@ -195,7 +195,7 @@ uint16_t CBMA180::getAccXRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        std::cout << "Data: " << std::dec() << viData[0] << " : " << viData[1] << std::endl;
+        std::cout << "Data: " << viData[0] << " : " << viData[1] << std::endl;
         iX = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits);
     }
     
