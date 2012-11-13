@@ -9,6 +9,8 @@ CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
     m_pI2C = pI2C;
     m_iAddress = iAddress;
     m_bStop = false;
+    m_iBits = 14;
+    m_iRange = 2;
 }
 
 CBMA180::~CBMA180()
