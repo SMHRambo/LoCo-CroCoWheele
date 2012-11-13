@@ -309,10 +309,11 @@ float CBMA180::getAccXPerI2C()
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
         iX = (viData[0] | viData[1] << 8) >> (16 - m_iBits);
+        if (iX&0x2000) iX|=0xc000;
     }
     m_pI2C->unlock();
     
-    fX = (float)iX / (pow(2,m_iBits) / (2 * m_iRange));
+    fX = (float)iX / ((pow(2,m_iBits -1) - 1) * m_iRange);
     
     return fX;
 }
