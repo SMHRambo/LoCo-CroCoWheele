@@ -299,7 +299,7 @@ int16_t CBMA180::getAccZSignedRawPerI2C()
 float CBMA180::getAccXPerI2C()
 {
     std::vector<uint8_t>        viData;
-    uint16_t                    iX = 0;
+    int16_t                    iX = 0;
     float                       fX = 0;
     
     viData.push_back(0x06);
@@ -308,7 +308,7 @@ float CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iX = (*((uint16_t *)viData.data()) >> (16 - m_iBits));
+        iX = (viData[1] | viData[1] << 8) >> (16 - m_iBits);
     }
     m_pI2C->unlock();
     
