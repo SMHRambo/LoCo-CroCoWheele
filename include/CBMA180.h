@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <boost/thread.hpp>
+#include <bitset>
 
 #include "CVector.h"
 #include "CI2C.h"
