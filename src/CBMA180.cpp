@@ -10,7 +10,7 @@ CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
     m_iAddress = iAddress;
     m_bStop = false;
     m_iBits = 14;
-    m_iRange = 4;
+    m_iRange = 2;
 }
 
 CBMA180::~CBMA180()
@@ -308,7 +308,7 @@ float CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iX = (*((uint16_t *)viData.data()) >> (16 - m_iBits)) << (16 - m_iBits);
+        iX = (*((uint16_t *)viData.data()) >> (16 - m_iBits));
     }
     m_pI2C->unlock();
     
