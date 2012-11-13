@@ -312,9 +312,7 @@ float CBMA180::getAccXPerI2C()
     }
     m_pI2C->unlock();
     
-    fX = (float)iX / 32768;
-    
-    fX *= m_iRange;
+    fX = (float)iX / (pow(2,m_iBits) / (2 * m_iRange));
     
     return fX;
 }
