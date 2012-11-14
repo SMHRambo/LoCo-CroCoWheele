@@ -310,7 +310,7 @@ float CBMA180::getAccXPerI2C()
     m_pI2C->lock();
 
     m_pI2C->writeI2C(m_iAddress,viData);
-    if(m_pI2C->readI2C(m_iAddress, viData, 2) && viData[0]&0x1)
+    if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
         iX = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
     }
@@ -332,7 +332,7 @@ float CBMA180::getAccYPerI2C()
     
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress,viData);
-    if(m_pI2C->readI2C(m_iAddress, viData, 2) && viData[0]&0x1)
+    if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
         iY = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
     }
@@ -340,8 +340,6 @@ float CBMA180::getAccYPerI2C()
     m_pI2C->unlock();
     
     fY = (float)iY / 32768 * m_iRange;
-    
-    return fY;
     
     return fY;
 }
@@ -356,7 +354,7 @@ float CBMA180::getAccZPerI2C()
     
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress,viData);
-    if(m_pI2C->readI2C(m_iAddress, viData, 2) && viData[0]&0x1)
+    if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
         iZ = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
     }
