@@ -311,12 +311,11 @@ float CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress,viData,2))
     {
-        iX = *((int16_t *)viData.data()) >> (16 - m_iBits);
-        if (iX&0x2000) iX|=0xc000;
+        iX = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
     }
     m_pI2C->unlock();
     
-    fX = ((float)iX / (pow(2,m_iBits -1) - 1)) * m_iRange;
+    fX = (float)iX / 32768 * m_iRange;
     
     return fX;
 }
