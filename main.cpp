@@ -61,6 +61,12 @@ int main(int argc, char** argv)
         
         while(true)
         {
+            std::cout << "X-Achse: " << pBMA180->getAccXRawPerI2C() << std::endl;
+            usleep( 100000 );
+            std::cout << "Y-Achse: " << pBMA180->getAccYRawPerI2C() << std::endl;
+            usleep( 100000 );
+            std::cout << "Z-Achse: " << pBMA180->getAccZRawPerI2C() << std::endl;
+            usleep( 100000 );
             std::cout << "X-Achse: " << pBMA180->getAccXPerI2C() << std::endl;
             usleep( 100000 );
             std::cout << "Y-Achse: " << pBMA180->getAccYPerI2C() << std::endl;
