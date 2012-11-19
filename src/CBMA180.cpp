@@ -234,7 +234,7 @@ uint16_t CBMA180::getAccZRawPerI2C()
 int16_t CBMA180::getAccXSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iX = 0;
+    int16_t iX = 0;
 
     viData.push_back(0x06);
 
@@ -254,7 +254,7 @@ int16_t CBMA180::getAccXSignedRawPerI2C()
 int16_t CBMA180::getAccYSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iY = 0;
+    int16_t iY = 0;
 
     viData.push_back(0x04);
 
@@ -272,7 +272,7 @@ int16_t CBMA180::getAccYSignedRawPerI2C()
 int16_t CBMA180::getAccZSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iZ = 0;
+    int16_t iZ = 0;
 
     viData.push_back(0x02);
 
@@ -313,7 +313,7 @@ float CBMA180::getAccXPerI2C()
 float CBMA180::getAccYPerI2C()
 {
     std::vector<uint8_t>        viData;
-    uint16_t                    iY = 0;
+    int16_t                    iY = 0;
     float                       fY = 0;
     
     viData.push_back(0x04);
@@ -335,7 +335,7 @@ float CBMA180::getAccYPerI2C()
 float CBMA180::getAccZPerI2C()
 {
     std::vector<uint8_t>        viData;
-    uint16_t                    iZ = 0;
+    int16_t                    iZ = 0;
     float                       fZ = 0;
     
     viData.push_back(0x06);
