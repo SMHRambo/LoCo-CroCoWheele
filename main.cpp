@@ -69,16 +69,14 @@ int main(int argc, char** argv)
         while(true)
         {
             std::cout << "X-Acc: " << pBMA180->getAccXPerI2C() << std::endl;
-            usleep( 100000 );
             std::cout << "Y-Acc: " << pBMA180->getAccYPerI2C() << std::endl;
-            usleep( 100000 );
             std::cout << "Z-Acc: " << pBMA180->getAccZPerI2C() << std::endl;
-            usleep( 100000 );
             std::cout << "X-Gyro: " << pITG3200->getGyroXinDegPerI2C() << std::endl;
-            usleep( 100000 );
             std::cout << "Y-Gyro: " << pITG3200->getGyroYinDegPerI2C() << std::endl;
-            usleep( 100000 );
             std::cout << "Z-Gyro: " << pITG3200->getGyroZinDegPerI2C() << std::endl;
+            std::cout << "X-Offset: " << pITG3200->getOffsetX() << std::endl;
+            std::cout << "Y-Offset: " << pITG3200->getOffsetY() << std::endl;
+            std::cout << "Z-Offset: " << pITG3200->getOffsetZ() << std::endl;            
             usleep( 100000 );
         }
 
