@@ -445,6 +445,28 @@ void CITG3200::setScaleZ(float iScaleZ)
 }
 
 
+void CITG3200::zeroCalibration(uint32_t iSamples, uint32_t iDelayMS)
+{
+    uint16_t iOffsetX = 0;
+    uint16_t iOffsetY = 0;
+    uint16_t iOffsetZ = 0;
+
+    for (uint32_t i = 0; i < iSamples; i++)
+    {
+
+        usleep( iDelayMS * 1000 );
+    
+        iOffsetX += CITG3200::getGyroXRawPerI2C();
+        iOffsetY += CITG3200::getGyroYRawPerI2C();
+        iOffsetZ += CITG3200::getGyroZRawPerI2C();
+    }
+    
+    setOffsetX(iOffsetX / iSamples + 0.5);
+    setOffsetY(iOffsetY / iSamples + 0.5);
+    setOffsetZ(iOffsetZ / iSamples + 0.5);
+}
+
+
 int16_t CITG3200::getGyroXRaw()
 {
     int16_t iGyroX = 0;

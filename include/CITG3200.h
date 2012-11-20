@@ -58,6 +58,8 @@ class CITG3200 : public CSensor
         void setScaleX(float iScaleX);
         void setScaleY(float iScaleY);
         void setScaleZ(float iScaleZ);
+        
+        void zeroCalibration(uint32_t iSamples, uint32_t iDelayMS);
 
         int16_t getGyroXRaw();
         int16_t getGyroYRaw();

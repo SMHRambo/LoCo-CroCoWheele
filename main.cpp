@@ -64,6 +64,8 @@ int main(int argc, char** argv)
         //pPIDReglerL->start();
         //pPIDReglerR->start();
         
+        pITG3200->zeroCalibration(2500, 2);
+        
         while(true)
         {
             std::cout << "X-Acc: " << pBMA180->getAccXPerI2C() << std::endl;
