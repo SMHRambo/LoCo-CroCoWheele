@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: sascha
+ * Author: Sascha Marcel Hacker
  *
  * Created on 14. Juli 2012, 01:44
  */
@@ -16,6 +16,7 @@
 #include "include/CITG3200.h"
 #include "include/CRPMeter.h"
 #include "include/CPIDRegler.h"
+#include "include/CKalmanFilter.h"
 
 using namespace std;
 
@@ -51,6 +52,10 @@ int main(int argc, char** argv)
         //Creare a PIDRegler object to handel PID Regler(Right motor)
         CPIDRegler * pPIDReglerR = new CPIDRegler(pRPMeterR, 0, pPWMDriver, 1);
         
+        
+        //Create a KalmanFilter object to handel Kalman Filter
+        CKalmanFilter * pKalmanFilter = new CKalmanFilter();
+        
         //Start all objekts(Every object has a thread, you can activate the thread to receive and update the data or you can to it manually)
         //pBMA180->start();
         //pITG3200->start();
@@ -61,17 +66,17 @@ int main(int argc, char** argv)
         
         while(true)
         {
-            std::cout << "X-Achse: " << pBMA180->getAccXRawPerI2C() << std::endl;
+            std::cout << "X-Acc: " << pBMA180->getAccXPerI2C() << std::endl;
             usleep( 100000 );
-            std::cout << "Y-Achse: " << pBMA180->getAccYRawPerI2C() << std::endl;
+            std::cout << "Y-Acc: " << pBMA180->getAccYPerI2C() << std::endl;
             usleep( 100000 );
-            std::cout << "Z-Achse: " << pBMA180->getAccZRawPerI2C() << std::endl;
+            std::cout << "Z-Acc: " << pBMA180->getAccZPerI2C() << std::endl;
             usleep( 100000 );
-            std::cout << "X-Achse: " << pBMA180->getAccXPerI2C() << std::endl;
+            std::cout << "X-Gyro: " << pITG3200->getGyroXinDegPerI2C() << std::endl;
             usleep( 100000 );
-            std::cout << "Y-Achse: " << pBMA180->getAccYPerI2C() << std::endl;
+            std::cout << "Y-Gyro: " << pITG3200->getGyroYinDegPerI2C() << std::endl;
             usleep( 100000 );
-            std::cout << "Z-Achse: " << pBMA180->getAccZPerI2C() << std::endl;
+            std::cout << "Z-Gyro: " << pITG3200->getGyroZinDegPerI2C() << std::endl;
             usleep( 100000 );
         }
 
