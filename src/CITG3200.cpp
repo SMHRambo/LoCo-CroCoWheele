@@ -211,33 +211,33 @@ uint16_t CITG3200::getGyroZRaw()
     return iGyroZ;
 }
 
-float getGyroXinDeg()
+float CITG3200::getGyroXinDeg()
 {
     
 }
 
-float getGyroYinDeg()
+float CITG3200::getGyroYinDeg()
 {
     
 }
 
-float getGyroZinDeg()
+float CITG3200::getGyroZinDeg()
 {
     
 }
 
 
-float getGyroXinRad()
+float CITG3200::getGyroXinRad()
 {
     
 }
 
-float getGyroYinRad()
+float CITG3200::getGyroYinRad()
 {
     
 }
 
-float getGyroZinRad()
+float CITG3200::getGyroZinRad()
 {
     
 }
