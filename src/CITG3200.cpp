@@ -462,8 +462,8 @@ void CITG3200::zeroCalibration(uint32_t iSamples, uint32_t iDelayMS)
     }
     
     m_iOffsetX = -(iOffsetX / iSamples);
-    m_iOffsetX = -(iOffsetY / iSamples);
-    m_iOffsetX = -(iOffsetZ / iSamples);
+    m_iOffsetY = -(iOffsetY / iSamples);
+    m_iOffsetZ = -(iOffsetZ / iSamples);
 }
 
 
