@@ -92,7 +92,6 @@ int16_t CBMA180::getAccZSignedRaw()
     return iAccZ;
 }
 
-
 float CBMA180::getAccX()
 {
     float fAccX = 0;
