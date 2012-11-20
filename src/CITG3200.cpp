@@ -364,7 +364,7 @@ void CITG3200::setOffsetY(int16_t iOffsetY)
 {
     m_ITG3200Mutex.lock();
     
-    m_iOffsetX = iOffsetY;
+    m_iOffsetY = iOffsetY;
     
     m_ITG3200Mutex.unlock();     
 }
@@ -373,7 +373,7 @@ void CITG3200::setOffsetZ(int16_t iOffsetZ)
 {
     m_ITG3200Mutex.lock();
     
-    m_iOffsetX = iOffsetZ;
+    m_iOffsetZ = iOffsetZ;
     
     m_ITG3200Mutex.unlock();    
 }
