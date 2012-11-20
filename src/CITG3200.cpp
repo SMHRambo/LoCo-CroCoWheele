@@ -12,6 +12,166 @@ CITG3200::~CITG3200()
 
 }
 
+CITG3200::CLK CITG3200::getClockSource()
+{
+    
+}
+
+void CITG3200::setClockSource(CLK CLKsource)
+{
+    
+}
+
+
+bool CITG3200::isXgyroStandby()
+{
+    
+}
+
+bool CITG3200::isYgyroStandby()
+{
+    
+}
+
+bool CITG3200::isZgyroStandby()
+{
+    
+}
+
+void CITG3200::setXgyroStandby(bool bStatus)
+{
+    
+}
+
+void CITG3200::setYgyroStandby(bool bStatus)
+{
+    
+}
+
+void CITG3200::setZgyroStandby(bool bStatus)
+{
+    
+}
+
+uint8_t CITG3200::getSampleRateDiv()
+{
+    
+}
+
+void CITG3200::setSampleRateDiv(uint8_t iSampleRateDiv)
+{
+    
+}
+
+CITG3200::FSR CITG3200::getFSRange()
+{
+    
+}
+
+void CITG3200::setFSRange(FSR Range)
+{
+    
+}
+
+CITG3200::FBW CITG3200::getFilterBW()
+{
+    
+}
+
+void CITG3200::setFilterBW(FBW FilterBW)
+{
+    
+}
+
+
+void CITG3200::reset()
+{
+    
+}
+
+bool CITG3200::isSleepMode()
+{
+    
+}
+
+void CITG3200::setSleepMode(bool bState)
+{
+    
+}
+
+bool CITG3200::isITGReady()
+{
+    
+}
+
+bool CITG3200::isRawDataReady()
+{
+    
+}
+
+int16_t CITG3200::getOffsetX()
+{
+    
+}
+
+int16_t CITG3200::getOffsetY()
+{
+    
+}
+
+int16_t CITG3200::getOffsetZ()
+{
+    
+}
+
+
+void CITG3200::setOffsetX(int16_t iOffsetX)
+{
+    
+}
+
+void CITG3200::setOffsetY(int16_t iOffsetY)
+{
+    
+}
+
+void CITG3200::setOffsetZ(int16_t iOffsetZ)
+{
+    
+}
+
+
+float CITG3200::getScaleX()
+{
+    
+}
+
+float CITG3200::getScaleY()
+{
+    
+}
+
+float CITG3200::getScaleZ()
+{
+    
+}
+
+void CITG3200::setScaleX(float iScaleX)
+{
+    
+}
+
+void CITG3200::setScaleY(float iScaleY)
+{
+    
+}
+
+void CITG3200::setScaleZ(float iScaleZ)
+{
+    
+}
+
+
 uint16_t CITG3200::getGyroXRaw()
 {
     uint16_t iGyroX = 0;
@@ -51,89 +211,35 @@ uint16_t CITG3200::getGyroZRaw()
     return iGyroZ;
 }
 
-float CITG3200::getGyroX()
+float getGyroXinDeg()
 {
-    float iGyroX = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iGyroX = m_iGyroX;
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iGyroX;
 }
 
-float CITG3200::getGyroY()
+float getGyroYinDeg()
 {
-    float iGyroY = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iGyroY = m_iGyroY;
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iGyroY;
 }
 
-float CITG3200::getGyroZ()
+float getGyroZinDeg()
 {
-    float iGyroZ = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iGyroZ = m_iGyroZ;
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iGyroZ;
 }
 
 
-float CITG3200::getGyroAlpha()
+float getGyroXinRad()
 {
-    float iAlpha = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iAlpha = m_iGyroX / sqrt(m_iGyroX^2 + m_iGyroY^2 + m_iGyroZ^2);
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iAlpha;
 }
 
-float CITG3200::getGyroBeta()
+float getGyroYinRad()
 {
-    float iBeta = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iBeta = m_iGyroY / sqrt(m_iGyroX^2 + m_iGyroY^2 + m_iGyroZ^2);
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iBeta;
 }
 
-float CITG3200::getGyroGamma()
+float getGyroZinRad()
 {
-    float iGamma = 0;
     
-    m_ITG3200Mutex.lock();
-    
-    iGamma = m_iGyroZ / sqrt(m_iGyroX^2 + m_iGyroY^2 + m_iGyroZ^2);
-    
-    m_ITG3200Mutex.unlock();
-    
-    return iGamma;
-}
-
-
-CVector CITG3200::getGyroVector()
-{
-
 }
 
 
@@ -152,42 +258,35 @@ uint16_t CITG3200::getGyroZRawPerI2C()
 
 }
 
-
-float CITG3200::getGyroXPerI2C()
+float CITG3200::getGyroXinDegPerI2C()
 {
-
+    
 }
 
-float CITG3200::getGyroYPerI2C()
+float CITG3200::getGyroYinDegPerI2C()
 {
-
+    
 }
 
-float CITG3200::getGyroZPerI2C()
+float CITG3200::getGyroZinDegPerI2C()
 {
-
-}
-
-
-float CITG3200::getGyroAlphaPerI2C()
-{
-
-}
-
-float CITG3200::getGyroBetaPerI2C()
-{
-
-}
-
-float CITG3200::getGyroGammaPerI2C()
-{
-
+    
 }
 
 
-CVector CITG3200::getGyroVectorPerI2C()
+float CITG3200::getGyroXinRadPerI2C()
 {
+    
+}
 
+float CITG3200::getGyroYinRadPerI2C()
+{
+    
+}
+
+float CITG3200::getGyroZinRadPerI2C()
+{
+    
 }
 
 
