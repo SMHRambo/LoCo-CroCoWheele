@@ -64,7 +64,7 @@ int main(int argc, char** argv)
         //pPIDReglerL->start();
         //pPIDReglerR->start();
         
-        pITG3200->zeroCalibration(5000, 5);
+        //pITG3200->zeroCalibration(2500, 2);
         
         while(true)
         {
