@@ -723,7 +723,7 @@ float CITG3200::getGyroYinDegPerI2C()
     
     m_ITG3200Mutex.lock();
     
-    fY += m_iOffsetY;
+    iY += m_iOffsetY;
     
     fY = float(iY) / (14.375 * m_iScaleY);   
     
