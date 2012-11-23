@@ -74,6 +74,9 @@ int main(int argc, char** argv)
             std::cout << "X-Gyro: " << pITG3200->getGyroXinDegPerI2C() << std::endl;
             std::cout << "Y-Gyro: " << pITG3200->getGyroYinDegPerI2C() << std::endl;
             std::cout << "Z-Gyro: " << pITG3200->getGyroZinDegPerI2C() << std::endl;
+            std::cout << "X-Raw: " << pITG3200->getGyroXRawPerI2C() << std::endl;
+            std::cout << "Y-Raw: " << pITG3200->getGyroYRawPerI2C() << std::endl;
+            std::cout << "Z-Raw: " << pITG3200->getGyroZRawPerI2C() << std::endl;
             std::cout << "X-Offset: " << pITG3200->getOffsetX() << std::endl;
             std::cout << "Y-Offset: " << pITG3200->getOffsetY() << std::endl;
             std::cout << "Z-Offset: " << pITG3200->getOffsetZ() << std::endl;            
