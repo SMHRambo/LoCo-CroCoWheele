@@ -460,9 +460,9 @@ void CITG3200::zeroCalibration(uint32_t iSamples, uint32_t iDelayMS)
         iOffsetZ += getGyroZRawPerI2C();
     }
     
-    m_iOffsetX = -iOffsetX / iSamples;
-    m_iOffsetY = -iOffsetY / iSamples;
-    m_iOffsetZ = -iOffsetZ / iSamples;
+    m_iOffsetX = -(iOffsetX / (int32_t)iSamples);
+    m_iOffsetY = -(iOffsetY / (int32_t)iSamples);
+    m_iOffsetZ = -(iOffsetZ / (int32_t)iSamples);
 }
 
 
