@@ -445,13 +445,13 @@ void CITG3200::setScaleZ(float iScaleZ)
 }
 
 
-void CITG3200::zeroCalibration(uint32_t iSamples, uint32_t iDelayMS)
+void CITG3200::zeroCalibration(uint16_t iSamples, uint32_t iDelayMS)
 {
     int32_t iOffsetX = 0;
     int32_t iOffsetY = 0;
     int32_t iOffsetZ = 0;
 
-    for (uint32_t i = 0; i < iSamples; i++)
+    for (uint16_t i = 0; i < iSamples; i++)
     {
         usleep( iDelayMS * 1000 );
     
