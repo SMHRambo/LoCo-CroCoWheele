@@ -447,13 +447,12 @@ void CITG3200::setScaleZ(float iScaleZ)
 
 void CITG3200::zeroCalibration(uint32_t iSamples, uint32_t iDelayMS)
 {
-    int16_t iOffsetX = 0;
-    int16_t iOffsetY = 0;
-    int16_t iOffsetZ = 0;
+    int32_t iOffsetX = 0;
+    int32_t iOffsetY = 0;
+    int32_t iOffsetZ = 0;
 
     for (uint32_t i = 0; i < iSamples; i++)
     {
-
         usleep( iDelayMS * 1000 );
     
         iOffsetX += getGyroXRawPerI2C();
@@ -627,7 +626,7 @@ int16_t CITG3200::getGyroXRawPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iX = viData[0] << 8 | viData[1];
+        iX = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -647,7 +646,7 @@ int16_t CITG3200::getGyroYRawPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iY = viData[0] << 8 | viData[1];
+        iY = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -667,7 +666,7 @@ int16_t CITG3200::getGyroZRawPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iZ = viData[0] << 8 | viData[1];
+        iZ = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -688,7 +687,7 @@ float CITG3200::getGyroXinDegPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iX = viData[0] << 8 | viData[1];
+        iX = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -717,7 +716,7 @@ float CITG3200::getGyroYinDegPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iY = viData[0] << 8 | viData[1];
+        iY = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -746,7 +745,7 @@ float CITG3200::getGyroZinDegPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iZ = viData[0] << 8 | viData[1];
+        iZ = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -775,7 +774,7 @@ float CITG3200::getGyroXinRadPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iX = viData[0] << 8 | viData[1];
+        iX = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -804,7 +803,7 @@ float CITG3200::getGyroYinRadPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iY = viData[0] << 8 | viData[1];
+        iY = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
@@ -833,7 +832,7 @@ float CITG3200::getGyroZinRadPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iZ = viData[0] << 8 | viData[1];
+        iZ = (int16_t)viData[0] << 8 | viData[1];
     }
 
     m_pI2C->unlock();
