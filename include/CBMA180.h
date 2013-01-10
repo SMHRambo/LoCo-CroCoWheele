@@ -172,34 +172,137 @@ class CBMA180 : public CSensor
         uint16_t getAccZRawPerI2C();
 
         
-        /** Gibt die die Z-Achsen Beschleunigung des Sensors zurück.  
-         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format zurück.
+        /** Gibt die die X-Achsen Beschleunigung des Sensors mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors im RAW Format mit Vorzeichen zurück.
          * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
-         * @return Gibt den Z-Achsen.Beschleunigung im RAW Format zurück.
-         * @see getAccXRawPerI2C()
-         * @see getAccYRawPerI2C();
+         * @return Gibt den X-Achsen.Beschleunigung im RAW Format mit Vorzeichen zurück.
+         * @see getAccYSignedRawPerI2C()
+         * @see getAccZSignedRawPerI2C();
          */
         int16_t getAccXSignedRawPerI2C();
+        
+        /** Gibt die die Y-Achsen Beschleunigung des Sensors mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Y-Achsen.Beschleunigung im RAW Format mit Vorzeichen zurück.
+         * @see getAccXSignedRawPerI2C()
+         * @see getAccZSignedRawPerI2C();
+         */
         int16_t getAccYSignedRawPerI2C();
+        
+        /** Gibt die die Z-Achsen Beschleunigung des Sensors mit Vorzeichen zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors im RAW Format mit Vorzeichen zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Z-Achsen.Beschleunigung im RAW Format mit Vorzeichen zurück.
+         * @see getAccXSignedRawPerI2C()
+         * @see getAccYSignedRawPerI2C();
+         */        
         int16_t getAccZSignedRawPerI2C();        
         
+        
+        /** Gibt die die X-Achsen Beschleunigung des Sensors als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der X-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den X-Achsen Beschleunigung als float in der richtigen Sklaierung zurück.
+         * @see getAccYPerI2C()
+         * @see getAccZPerI2C();
+         */        
         float getAccXPerI2C();
+        
+        /** Gibt die die Y-Achsen Beschleunigung des Sensors als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Y-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Y-Achsen Beschleunigung als float in der richtigen Sklaierung zurück.
+         * @see getAccXPerI2C()
+         * @see getAccZPerI2C();
+         */        
         float getAccYPerI2C();
+        
+        /** Gibt die die Z-Achsen Beschleunigung des Sensors als float in der richtigen Sklaierung zurück.  
+         * Diese Funktion gibt den Beschleunigungswert der Z-Achse des Sensors als float in der richtigen Sklaierung zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Gibt den Z-Achsen Beschleunigung als float in der richtigen Sklaierung zurück.
+         * @see getAccXPerI2C()
+         * @see getAccYPerI2C();
+         */        
         float getAccZPerI2C();
 
+        
+        /** Gibt den Winkel Alpha zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur X-Achse zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Der Winkel des Beschleunigungsvektors zur X-Achse. 
+         * @see getAccBetaPerI2C()
+         * @see getAccGammaPerI2C()
+         */        
         float getAccAlphaPerI2C();
+        
+        /** Gibt den Winkel Beta zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Y-Achse zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Der Winkel des Beschleunigungsvektors zur Y-Achse. 
+         * @see getAccAlphaPerI2C()
+         * @see getAccGammaPerI2C()
+         */        
         float getAccBetaPerI2C();
+        
+        /** Gibt den Winkel Gamma zurück.  
+         * Diese Funktion gibt den Winkel des Beschleunigungsvektor in Relation zur Z-Achse zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Der Winkel des Beschleunigungsvektors zur Z-Achse. 
+         * @see getAccAlphaPerI2C()
+         * @see getAccBetaPerI2C()
+         */        
         float getAccGammaPerI2C();
 
+
+        /** Gibt einen Objekt des Typs CVector zurück.  
+         * Diese Funktion gibt einen Vektor zurück der alle Beschleunigungswerte des Sensors enthält zurück.
+         * Bei dieser Funktion wird der Sensor über I2C angesprochen und der Wert frisch ausgelesen.
+         * @return Der Beschleunigungsvektor des Sensors.
+         */        
         CVector getVectorPerI2C();
 
+
+        /** Startet den Thread der die aktuellen Daten vom Sensor holt. 
+         */        
         void start();
+        
+        /** Stoppt den Thread der die aktuellen Daten vom Sensor holt. 
+         */ 
         void stop();
+        
+        /** Terminiert den Thread der die aktuellen Daten vom Sensor holt. 
+         * Bei dieser Funktion wird der Thread per Interrupt beendet, 
+         * das heißt er wird nicht ordnungsgemäß beendet.
+         * Nur bei Sensorproblemen benutzen.
+         */        
         void kill();
+        
+        /** Diese Funktion aktualisiert die Daten des Objektes mit den aktuellen Sensordaten.
+         * Dies ist auch die Funktion die vom Thread ausgeführt wird.
+         */
         void run();
         
+        /** Diese Funktion implimentiert das INterfaces der Elternklasse CSensor.
+         * Sie ermöglicht das übergeben von Objekten an andere Objekte und Daten zu extrahieren, hier die Sensordaten.
+         * Channle 0: getAccX();
+         * Channle 1: getAccY();
+         * Channle 2: getAccZ();
+         * Channle 3: getAccXPerI2C();
+         * Channle 4: getAccYPerI2C();
+         * Channle 5: getAccZPerI2C();
+         * Channle 6: getAccAlpha();
+         * Channle 7: getAccBeta();
+         * Channle 8: getAccGamma();
+         * Channle 9: getAccAlphaPerI2C();
+         * Channle 10: getAccBetaPerI2C();
+         * Channle 11: getAccGammaPerI2C();
+         * @param[out] iValue Dies gibt den gewünschten Sensorwert zurück.
+         * @param[in] iChannel Dies gibt an welche Daten angefordert werden.
+         */
         virtual bool getValue(float &iValue, uint8_t iChannle);
-
+        
     private:
         boost::recursive_mutex  m_BMA180Mutex;
         boost::thread           m_BMA180Thread;

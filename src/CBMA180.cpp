@@ -1,9 +1,5 @@
 #include "../include/CBMA180.h"
 
-//Construktor
-//Parameter:
-//CI2C * pI2C an i2c bus object to communicate with the sensor
-//uint8_t iAddress the address of the sensor on the i2c bus
 CBMA180::CBMA180(CI2C * pI2C, uint8_t iAddress)
 {
     m_pI2C = pI2C;
@@ -18,7 +14,6 @@ CBMA180::~CBMA180()
 
 }
 
-//return the raw acceleration value of the x axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccXRaw()
 {
     uint16_t iAccX = 0;
@@ -32,7 +27,6 @@ uint16_t CBMA180::getAccXRaw()
     return iAccX;
 }
 
-//return the raw acceleration value of the y axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccYRaw()
 {
     uint16_t iAccY = 0;
@@ -46,7 +40,6 @@ uint16_t CBMA180::getAccYRaw()
     return iAccY;
 }
 
-//return the raw acceleration value of the z axis from the BMA180 sensor saved in the object
 uint16_t CBMA180::getAccZRaw()
 {
     uint16_t iAccZ = 0;
@@ -60,7 +53,6 @@ uint16_t CBMA180::getAccZRaw()
     return iAccZ;
 }
 
-//return the raw but signed acceleration value of the x axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccXSignedRaw()
 {
     uint16_t iAccX = 0;
@@ -74,7 +66,6 @@ int16_t CBMA180::getAccXSignedRaw()
     return iAccX;
 }
 
-//return the raw but signed acceleration value of the y axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccYSignedRaw()
 {
     uint16_t iAccY = 0;
@@ -88,7 +79,6 @@ int16_t CBMA180::getAccYSignedRaw()
     return iAccY;
 }
 
-//return the raw but signed acceleration value of the z axis from the BMA180 sensor saved in the object
 int16_t CBMA180::getAccZSignedRaw()
 {
     uint16_t iAccZ = 0;
@@ -101,7 +91,6 @@ int16_t CBMA180::getAccZSignedRaw()
 
     return iAccZ;
 }
-
 
 float CBMA180::getAccX()
 {
@@ -244,7 +233,7 @@ uint16_t CBMA180::getAccZRawPerI2C()
 int16_t CBMA180::getAccXSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iX = 0;
+    int16_t iX = 0;
 
     viData.push_back(0x06);
 
@@ -252,7 +241,7 @@ int16_t CBMA180::getAccXSignedRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iX = *((int16_t *)&viData.at(0)) >> (16 - m_iBits);
+        iX = *((int16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
         if (iX&0x2000) iX|=0xc000;
     }
     
@@ -264,7 +253,7 @@ int16_t CBMA180::getAccXSignedRawPerI2C()
 int16_t CBMA180::getAccYSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iY = 0;
+    int16_t iY = 0;
 
     viData.push_back(0x04);
 
@@ -272,8 +261,7 @@ int16_t CBMA180::getAccYSignedRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iY = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits);
-        if (iY&0x2000) iY|=0xc000;
+        iY = *((uint16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
     }
     m_pI2C->unlock();
 
@@ -283,7 +271,7 @@ int16_t CBMA180::getAccYSignedRawPerI2C()
 int16_t CBMA180::getAccZSignedRawPerI2C()
 {
     std::vector<uint8_t> viData;
-    uint16_t iZ = 0;
+    int16_t iZ = 0;
 
     viData.push_back(0x02);
 
@@ -291,8 +279,7 @@ int16_t CBMA180::getAccZSignedRawPerI2C()
     m_pI2C->writeI2C(m_iAddress, viData);
     if (m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iZ = *((int16_t *)&viData.at(0)) >> (16 - m_iBits);
-        if (iZ&0x2000) iZ|=0xc000;
+        iZ = *((int16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
     }
     m_pI2C->unlock();
 
@@ -312,7 +299,7 @@ float CBMA180::getAccXPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iX = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
+        iX = *((int16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
     }
 
     m_pI2C->unlock();
@@ -325,7 +312,7 @@ float CBMA180::getAccXPerI2C()
 float CBMA180::getAccYPerI2C()
 {
     std::vector<uint8_t>        viData;
-    uint16_t                    iY = 0;
+    int16_t                    iY = 0;
     float                       fY = 0;
     
     viData.push_back(0x04);
@@ -334,7 +321,7 @@ float CBMA180::getAccYPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iY = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
+        iY = *((int16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
     }
 
     m_pI2C->unlock();
@@ -347,7 +334,7 @@ float CBMA180::getAccYPerI2C()
 float CBMA180::getAccZPerI2C()
 {
     std::vector<uint8_t>        viData;
-    uint16_t                    iZ = 0;
+    int16_t                    iZ = 0;
     float                       fZ = 0;
     
     viData.push_back(0x06);
@@ -356,7 +343,7 @@ float CBMA180::getAccZPerI2C()
     m_pI2C->writeI2C(m_iAddress,viData);
     if(m_pI2C->readI2C(m_iAddress, viData, 2))
     {
-        iZ = *((int16_t *)viData.data()) >> (16 - m_iBits) << (16 - m_iBits);
+        iZ = *((int16_t *)&viData.at(0)) >> (16 - m_iBits) << (16 - m_iBits);
     }
 
     m_pI2C->unlock();
@@ -471,7 +458,7 @@ void CBMA180::run()
         std::vector<uint8_t> viDataOUT;
         viDataOUT.push_back(0x02);
         
-        while (!m_bStop)
+        do
         {
             m_pI2C->lock();
             m_pI2C->writeI2C(m_iAddress, viDataOUT);
@@ -483,6 +470,7 @@ void CBMA180::run()
             }
             m_pI2C->unlock();
         }
+        while (!m_bStop);
     }
     catch (boost::thread_interrupted&)
     {
