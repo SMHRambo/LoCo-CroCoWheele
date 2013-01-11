@@ -358,6 +358,27 @@ class CBMA180 : public CSensor
         uint16_t getHardwareOffsetY();
         uint16_t getHardwareOffsetZ();
         
+        void setHardwareGainT(uint8_t);
+        uint8_t getHardwareGainT();
+        
+        void setHardwareOffsetT(uint8_t);
+        uint8_t getHardwareOffsetT();
+        
+        void set12BitMode(bool bMode);
+        bool get12BitMode();
+
+        void setGRange(uint8_t iRange);
+        uint8_t getGRange();
+
+        void setAdvancedInterruptMode(bool bMode);
+        bool getAdvancedInterruptMode();
+
+        void setPowerMode(modeconfig eConfig);
+        modeconfig getPowerMode();
+
+        void setWakeupduration(wakeupduration eWakeup);
+        wakeupduration getWakeupduration();
+        
     private:
         boost::recursive_mutex  m_BMA180Mutex;
         boost::thread           m_BMA180Thread;
