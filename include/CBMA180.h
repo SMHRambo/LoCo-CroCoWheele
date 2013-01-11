@@ -11,6 +11,45 @@
 class CBMA180 : public CSensor
 {
     public:
+        enum range
+        {
+            R1g         = 0x0,
+            R1.5g       = 0b1,
+            R2g         = 0x2,
+            R3g         = 0x3,
+            R4g         = 0x4,
+            R8g         = 0x5,
+            R16g        = 0x6
+        };
+        
+        enum bw
+        {
+            BW10Hz              = 0x0,
+            BW20Hz              = 0x1,
+            BW40Hz              = 0x2,
+            BW75Hz              = 0x3,
+            BW150Hz             = 0x4,
+            BW300Hz             = 0x5,
+            BW600Hz             = 0x6,
+            BW1200Hz            = 0x7,
+            BW1HzHighpass       = 0x8,
+            BW0.2-300HzBandpass = 0x9
+        };
+        
+        enum modeconfig
+        {
+            LowNoiseMode = 0x0,
+            LowPowerMode = 0x3
+        };
+        
+        enum wakeupduration
+        {
+            T20ms       = 0x0,
+            T80ms       = 0x1,
+            T320ms      = 0x2,
+            T2560ms     = 0x3
+        };
+        
         /** Erzeugt ein Objekt der Klasse CBMA180.
          * Der Konstruktor erwartet als Parameter die i2c Adresse des Sensors und ein i2c Bus Objekt über den der Sensor ansgeschlossen ist.
          * @param[in] pI2C Der i2c Bus über dem der Sensor angeschlossen ist. 
@@ -302,6 +341,22 @@ class CBMA180 : public CSensor
          * @param[in] iChannel Dies gibt an welche Daten angefordert werden.
          */
         virtual bool getValue(float &iValue, uint8_t iChannle);
+        
+        void setHardwareGainX(uint8_t iX);
+        void setHardwareGainY(uint8_t iY);
+        void setHardwareGainZ(uint8_t iZ);
+        
+        void setHardwareOffsetX(uint16_t iX);
+        void setHardwareOffsetY(uint16_t iY);
+        void setHardwareOffsetZ(uint16_t iZ);
+        
+        uint8_t getHardwareGainX();
+        uint8_t getHardwareGainY();
+        uint8_t getHardwareGainZ();
+        
+        uint16_t getHardwareOffsetX();
+        uint16_t getHardwareOffsetY();
+        uint16_t getHardwareOffsetZ();
         
     private:
         boost::recursive_mutex  m_BMA180Mutex;

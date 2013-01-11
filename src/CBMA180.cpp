@@ -526,3 +526,373 @@ bool CBMA180::getValue(float &iValue, uint8_t iChannle)
 
     return 1;
 }
+
+void CBMA180::setHardwareGainX(uint8_t iX)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iX = 0;
+
+    viData.push_back(0x32);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iX = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x32);
+        viData.push_back((iX << 1) | (temp_iX & 0x1));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();
+}
+
+void CBMA180::setHardwareGainY(uint8_t iY)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iY = 0;
+
+    viData.push_back(0x33);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iY = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x33);
+        viData.push_back((iY << 1) | (temp_iY & 0x1));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();
+}
+
+void CBMA180::setHardwareGainZ(uint8_t iZ)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iZ = 0;
+
+    viData.push_back(0x34);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iZ = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x34);
+        viData.push_back((iZ << 1) | (temp_iZ & 0x1));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();   
+}
+
+void CBMA180::setHardwareOffsetX(uint16_t iX)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iX = 0;
+
+    viData.push_back(0x35);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iX = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x38);
+        viData.push_back(iX >> 4);
+        m_pI2C->writeI2C(m_iAddress, viData);
+        
+        viData.clear();
+        viData.push_back(0x35);
+        viData.push_back((iX << 4) | (temp_iX & 0xF));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();
+}
+
+void CBMA180::setHardwareOffsetY(uint16_t iY)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iX = 0;
+
+    viData.push_back(0x36);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iX = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x39);
+        viData.push_back(iX >> 4);
+        m_pI2C->writeI2C(m_iAddress, viData);
+        
+        viData.clear();
+        viData.push_back(0x36);
+        viData.push_back((iX << 4) | (temp_iX >> 4));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();
+}
+
+void CBMA180::setHardwareOffsetZ(uint16_t iZ)
+{
+    std::vector<uint8_t> viData;
+    uint8_t temp_iX = 0;
+
+    viData.push_back(0x36);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        temp_iX = viData.at(0);
+        
+        viData.clear();
+        viData.push_back(0x3A);
+        viData.push_back(iX >> 4);
+        m_pI2C->writeI2C(m_iAddress, viData);
+        
+        viData.clear();
+        viData.push_back(0x36);
+        viData.push_back((iX << 4) | (temp_iX & 0xF));
+        m_pI2C->writeI2C(m_iAddress, viData);
+    }
+    
+    m_pI2C->unlock();   
+}
+
+uint8_t CBMA180::getHardwareGainX()
+{
+    std::vector<uint8_t> viData;
+    uint8_t iX = 0;
+
+    viData.push_back(0x32);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iX = viData.at(0) >> 1;
+    }
+    
+    m_pI2C->unlock();
+
+    return iX;
+}
+
+uint8_t CBMA180::getHardwareGainY()
+{
+    std::vector<uint8_t> viData;
+    uint8_t iY = 0;
+
+    viData.push_back(0x33);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iY = viData.at(0) >> 1;
+    }
+    
+    m_pI2C->unlock();
+
+    return iY;
+}
+
+uint8_t CBMA180::getHardwareGainZ()
+{
+    std::vector<uint8_t> viData;
+    uint8_t iZ = 0;
+
+    viData.push_back(0x34);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iZ = viData.at(0) >> 1;
+    }
+    
+    m_pI2C->unlock();
+
+    return iZ;   
+}
+
+uint16_t CBMA180::getHardwareOffsetX()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iX = 0;
+
+    viData.push_back(0x38);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iX = viData.at(0);
+        iX << 4;
+    }
+    
+    viData.clear();
+    viData.push_back(0x35);
+    
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iX |= viData.at(0) >> 4;
+    }
+    else
+    {
+        iX = 0;
+    }
+    
+    m_pI2C->unlock();
+
+    return iX;
+}
+
+uint16_t CBMA180::getHardwareOffsetY()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iY = 0;
+
+    viData.push_back(0x39);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iY = viData.at(0);
+        iY << 4;
+    }
+    
+    viData.clear();
+    viData.push_back(0x36);
+    
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iY |= viData.at(0) & 0xF;
+    }
+    else
+    {
+        iY = 0;
+    }
+    
+    m_pI2C->unlock();
+
+    return iY;
+}
+
+uint16_t CBMA180::getHardwareOffsetZ()
+{
+    std::vector<uint8_t> viData;
+    uint16_t iZ = 0;
+
+    viData.push_back(0x3A);
+    
+    m_pI2C->lock();
+    m_pI2C->writeI2C(m_iAddress, viData);
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iZ = viData.at(0);
+        iZ << 4;
+    }
+    
+    viData.clear();
+    viData.push_back(0x36);
+    
+    if (m_pI2C->readI2C(m_iAddress, viData, 1))
+    {
+        iZ |= viData.at(0) >> 4;
+    }
+    else
+    {
+        iZ = 0;
+    }
+    
+    m_pI2C->unlock();
+
+    return iZ;    
+}
+
+void CBMA180::setHardwareGainT(uint8_t)
+{
+    
+}
+
+uint8_t CBMA180::getHardwareGainT()
+{
+    
+}
+
+void CBMA180::setHardwareOffsetT(uint8_t)
+{
+    
+}
+
+uint8_t CBMA180::getHardwareOffsetT()
+{
+    
+}
+
+void CBMA180::set12BitMode(bool bMode)
+{
+    
+}
+
+bool CBMA180::get12BitMode()
+{
+    
+}
+
+void CBMA180::setGRange(uint8_t iRange)
+{
+    
+}
+
+uint8_t CBMA180::getGRange()
+{
+    
+}
+
+void CBMA180::setAdvancedInterruptMode(bool bMode)
+{
+    
+}
+
+bool CBMA180::getAdvancedInterruptMode()
+{
+    
+}
+
+void CBMA180::setPowerMode(CBMA180::modeconfig eConfig)
+{
+    
+}
+
+CBMA180::modeconfig CBMA::getPowerMode()
+{
+    
+}
+
+void CBMA180::setWakeupduration(CBMA180::wakeupduration eWakeup)
+{
+    
+}
+
+CBMA180::wakeupduration CBMA180::getWakeupduration()
+{
+    
+}
