@@ -180,7 +180,7 @@ uint16_t CBMA180::getAccXRawPerI2C()
     std::vector<uint8_t> viData;
     uint16_t iX = 0;
 
-    viData.push_back(0x06);
+    viData.push_back(0x02);
 
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress, viData);
@@ -217,7 +217,7 @@ uint16_t CBMA180::getAccZRawPerI2C()
     std::vector<uint8_t> viData;
     uint16_t iZ = 0;
 
-    viData.push_back(0x02);
+    viData.push_back(0x06);
 
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress, viData);
@@ -235,7 +235,7 @@ int16_t CBMA180::getAccXSignedRawPerI2C()
     std::vector<uint8_t> viData;
     int16_t iX = 0;
 
-    viData.push_back(0x06);
+    viData.push_back(0x02);
 
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress, viData);
@@ -273,7 +273,7 @@ int16_t CBMA180::getAccZSignedRawPerI2C()
     std::vector<uint8_t> viData;
     int16_t iZ = 0;
 
-    viData.push_back(0x02);
+    viData.push_back(0x06);
 
     m_pI2C->lock();
     m_pI2C->writeI2C(m_iAddress, viData);

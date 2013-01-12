@@ -13,6 +13,7 @@ CPIDRegler::CPIDRegler(CSensor * pSesnor, uint8_t iSensorChannle, CActor * pActo
     m_iSensorChannle    = iSensorChannle;
     m_pActor            = pActor;
     m_iActorChannle     = iActorChannle;
+    m_bStop             = true;
 }
 
 CPIDRegler::~CPIDRegler()
@@ -67,7 +68,8 @@ uint16_t CPIDRegler::getTime()
 
 void CPIDRegler::start()
 {
-        m_PIDReglerThread = boost::thread(&CPIDRegler::run, this);
+    m_bStop = false;
+    m_PIDReglerThread = boost::thread(&CPIDRegler::run, this);
 }
 
 void CPIDRegler::stop()
@@ -88,7 +90,7 @@ void CPIDRegler::run()
     {
         float iSensorValue = 0;
         
-        while (!m_bStop)
+        do
         {
             m_iTimeNow = getTime();
             
@@ -103,6 +105,7 @@ void CPIDRegler::run()
             
             boost::this_thread::sleep(boost::posix_time::milliseconds(m_iTime - m_iTimeNow));
         }
+        while (!m_bStop)
     }
     catch (boost::thread_interrupted&)
     {
